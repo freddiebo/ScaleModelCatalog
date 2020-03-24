@@ -45,9 +45,10 @@ class ViewController: UICollectionViewController {
         }
     }
     
+    // добавление модели в список (пока заглушка)
     @objc func AddModel() {
         var text = "Test spec more. "
-        for i in 0 ... 10 {
+        for i in 0 ... 6 {
             text.append(text)
         }
         models.append(Model(name: "New model", spec: text, image: "Car.jpg"))

@@ -1,6 +1,7 @@
-//
-//  Model.swift
-//  ScaleModelCatalog
+//  Класс для описания модели
+//  name - Название модели
+//  spec - Описание/спецификация модели
+//  name - Фотграфия модели
 //
 //  Created by  Vladislav Bondarev on 18.03.2020.
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.

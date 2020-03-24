@@ -1,6 +1,4 @@
-//
-//  ImageViewController.swift
-//  ScaleModelCatalog
+//  Представление для просмотра изображения с DetailViewController
 //
 //  Created by  Vladislav Bondarev on 23.03.2020.
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
@@ -16,18 +14,19 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 2.0
+
+        imageView.image = UIImage(named: selectImage)
+
+        scrollView.minimumZoomScale = 1
+        scrollView.maximumZoomScale = 3
         scrollView.delegate = self
-        
-        //self.imageView.image = UIImage(named: selectImage)
     }
+    
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView.self
+        return imageView
     }
-    
+
     
     
     

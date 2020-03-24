@@ -1,6 +1,4 @@
-//
-//  DetailViewController.swift
-//  ScaleModelCatalog
+//  Представление для просмотра детальной информации по выбранной модели
 //
 //  Created by  Vladislav Bondarev on 19.03.2020.
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
