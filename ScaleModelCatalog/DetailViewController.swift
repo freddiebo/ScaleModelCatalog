@@ -11,7 +11,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var imageModel: UIImageView!    
     @IBOutlet var specModelText: UITextView!
     var selectedModel: String?
-    var selectedModelImage: String = ""
+    //var selectedModelImage: String = ""
+    var selectedModelImage: UIImage?
     var selectedModelSpec: String = ""
     
     override func viewDidLoad() {
@@ -19,7 +20,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
 
         title = selectedModel
         navigationItem.largeTitleDisplayMode = .never
-        imageModel.image = UIImage(named: selectedModelImage)
+        imageModel.image = selectedModelImage//UIImage(named: selectedModelImage)
         specModelText.text = selectedModelSpec
         
         
@@ -40,15 +41,14 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-        
-        
-        if let vc = storyboard?.instantiateViewController(identifier: "ImageView") as? ImageViewController {
+        //let tappedImage = tapGestureRecognizer.view as! UIImageView
+        /*if let vc = storyboard?.instantiateViewController(identifier: "ImageView") as? ImageViewController {
             vc.selectImage = selectedModelImage
             navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        print("tap")
+        }*/
+        let vc = ImageViewController()
+        vc.selectImage = selectedModelImage
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

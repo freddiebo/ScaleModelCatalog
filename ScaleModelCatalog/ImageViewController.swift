@@ -8,14 +8,15 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
 
-    var selectImage: String = ""
+    //var selectImage: String = ""
+    var selectImage: UIImage?
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = UIImage(named: selectImage)
+        imageView.image = selectImage
 
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 3
@@ -26,19 +27,15 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnTap = true
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.hidesBarsOnTap = false
+    }
 
 }

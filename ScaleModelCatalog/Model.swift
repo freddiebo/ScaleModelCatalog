@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Model: NSObject {
+class Model: NSObject, Codable {
     
     var name: String
     var spec: String
@@ -18,11 +18,16 @@ class Model: NSObject {
     init(name:String,spec:String,image:String) {
         self.name = name
         self.spec = spec
-        if (image == "") {
-            self.image = "NoImage.png"
-        } else {
-            self.image = image
-        }
+        self.image = image
     }
     
+    func loadImage() -> UIImage? {
+        if let url = URL(string:self.image) {
+            if let data = try? Data(contentsOf: url)
+            {
+                return UIImage(data: data)
+            }
+        }
+        return UIImage(contentsOfFile: "NoImage.png")
+    }
 }
