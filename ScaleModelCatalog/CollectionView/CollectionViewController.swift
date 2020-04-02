@@ -1,28 +1,40 @@
 //
-//  ViewController.swift
+//  CollectionViewController.swift
 //  ScaleModelCatalog
 //
-//  Created by  Vladislav Bondarev on 17.03.2020.
+//  Created by  Vladislav Bondarev on 02.04.2020.
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+private let reuseIdentifier = "Model"
 
+class CollectionViewController: UICollectionViewController {
+    
     var models = [Model]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddModel))
+
+        // Register cell classes
+        let nibCell = UINib(nibName: "ModelViewCell", bundle: nil)
+        self.collectionView!.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
+        
         
         let urlString = "http://www.mocky.io/v2/5e81fad52f00000d002fb782"
-        //let urlString = "http://www.mocky.io/v2/5e81cb6d2f00000d002fb593"
+            //let urlString = "http://www.mocky.io/v2/5e81cb6d2f00000d002fb593"
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
                 return
             }
         }
+        collectionView.reloadData()
         
     }
     
@@ -39,7 +51,7 @@ class ViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Model", for: indexPath) as? ModelCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
             fatalError("")
         }
         
@@ -71,22 +83,36 @@ class ViewController: UICollectionViewController {
         vc.selectedModelSpec = models[indexPath.row].spec
         navigationController?.pushViewController(vc, animated: true)
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
-    // добавление модели в список (пока заглушка)
+    /*;func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset:CGFloat = 10
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }*/
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 200, height: 200)
+    }
+    
     @objc func AddModel() {
         var text = "Test spec more. "
         models.append(Model(name: "New model", spec: text, image: "Car.jpg"))
         collectionView.reloadData()
     }
     
-    func loadImage(for urlString:String) -> UIImage? {
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url)
-            {
-                return UIImage(data: data)
-            }
-        }
-        return UIImage(contentsOfFile: "NoImage.png")
-    }
 }
-
