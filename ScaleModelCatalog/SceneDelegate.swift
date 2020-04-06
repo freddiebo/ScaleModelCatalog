@@ -20,9 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mainViewController = CollectionViewController(nibName: "CollectionViewController", bundle: nil)//(collectionViewLayout: UICollectionViewFlowLayout())
-        
-        window?.rootViewController = UINavigationController(rootViewController: mainViewController)
+        let TabBar = TabBarController()
+        window?.rootViewController = UINavigationController(rootViewController: TabBar)
         window?.makeKeyAndVisible()
     }
 

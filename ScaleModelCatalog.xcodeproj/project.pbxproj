@@ -22,6 +22,10 @@
 		22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D832435E42E0001FFB5 /* CollectionViewController.xib */; };
 		22B83D882435E4780001FFB5 /* ModelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D862435E4780001FFB5 /* ModelViewCell.swift */; };
 		22B83D892435E4780001FFB5 /* ModelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D872435E4780001FFB5 /* ModelViewCell.xib */; };
+		22B83D91243728F30001FFB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D90243728F30001FFB5 /* TabBarController.swift */; };
+		22B83D95243780590001FFB5 /* SortCars.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D94243780580001FFB5 /* SortCars.png */; };
+		22B83D972437805F0001FFB5 /* AllCars.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D962437805F0001FFB5 /* AllCars.png */; };
+		22B83D99243785C70001FFB5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D98243785C70001FFB5 /* TableViewController.swift */; };
 		22CADCC3243205310038BAA7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CADCC2243205310038BAA7 /* Models.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		22B83D832435E42E0001FFB5 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		22B83D862435E4780001FFB5 /* ModelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewCell.swift; sourceTree = "<group>"; };
 		22B83D872435E4780001FFB5 /* ModelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelViewCell.xib; sourceTree = "<group>"; };
+		22B83D90243728F30001FFB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		22B83D94243780580001FFB5 /* SortCars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SortCars.png; sourceTree = "<group>"; };
+		22B83D962437805F0001FFB5 /* AllCars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllCars.png; sourceTree = "<group>"; };
+		22B83D98243785C70001FFB5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		22CADCC2243205310038BAA7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +69,27 @@
 			isa = PBXGroup;
 			children = (
 				2246FEBE242396410009F8EC /* NoImage.png */,
+				22B83D962437805F0001FFB5 /* AllCars.png */,
+				22B83D94243780580001FFB5 /* SortCars.png */,
 				2246FEC22424D7040009F8EC /* Car.jpg */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		2292E21D243B7CF600762704 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				22B83D90243728F30001FFB5 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2292E21E243B7D0200762704 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				22B83D98243785C70001FFB5 /* TableViewController.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		229E1CCA2420EF20000F3957 = {
@@ -90,6 +116,8 @@
 				2246FEBB242258510009F8EC /* Model.swift */,
 				22CADCC2243205310038BAA7 /* Models.swift */,
 				229E1CD82420EF20000F3957 /* SceneDelegate.swift */,
+				2292E21D243B7CF600762704 /* TabBar */,
+				2292E21E243B7D0200762704 /* TableView */,
 				229E1CDF2420EF27000F3957 /* Assets.xcassets */,
 				22B83D8F2436259E0001FFB5 /* CollectionView */,
 				2246FEBD242391370009F8EC /* Content */,
@@ -196,11 +224,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B83D972437805F0001FFB5 /* AllCars.png in Resources */,
 				22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */,
 				22B83D712434C7B50001FFB5 /* DetailViewController.xib in Resources */,
 				229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */,
 				22B83D772434CFF90001FFB5 /* ImageViewController.xib in Resources */,
 				229E1CE02420EF27000F3957 /* Assets.xcassets in Resources */,
+				22B83D95243780590001FFB5 /* SortCars.png in Resources */,
 				22B83D892435E4780001FFB5 /* ModelViewCell.xib in Resources */,
 				2246FEBF242396420009F8EC /* NoImage.png in Resources */,
 				2246FEC32424D7040009F8EC /* Car.jpg in Resources */,
@@ -217,6 +247,8 @@
 				22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */,
 				2246FEBC242258510009F8EC /* Model.swift in Sources */,
 				229E1CD72420EF20000F3957 /* AppDelegate.swift in Sources */,
+				22B83D99243785C70001FFB5 /* TableViewController.swift in Sources */,
+				22B83D91243728F30001FFB5 /* TabBarController.swift in Sources */,
 				22B83D882435E4780001FFB5 /* ModelViewCell.swift in Sources */,
 				22CADCC3243205310038BAA7 /* Models.swift in Sources */,
 				2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */,

@@ -14,11 +14,12 @@ class Model: NSObject, Codable {
     var name: String
     var spec: String
     var image: String
-    
-    init(name:String,spec:String,image:String) {
+    var manufacturer: String
+    init(name:String,spec:String,image:String,manufacturer: String) {
         self.name = name
         self.spec = spec
         self.image = image
+        self.manufacturer = manufacturer
     }
     
     func loadImage() -> UIImage? {

@@ -26,8 +26,8 @@ class CollectionViewController: UICollectionViewController {
         self.collectionView!.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
         
         
-        let urlString = "http://www.mocky.io/v2/5e81fad52f00000d002fb782"
-            //let urlString = "http://www.mocky.io/v2/5e81cb6d2f00000d002fb593"
+        let urlString = "http://www.mocky.io/v2/5e8747f03100000aff81a520"
+            //let urlString = "http://www.mocky.io/v2/5e8746733100008af581a50e"
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
                 parse(json: data)
@@ -111,7 +111,7 @@ class CollectionViewController: UICollectionViewController {
     
     @objc func AddModel() {
         var text = "Test spec more. "
-        models.append(Model(name: "New model", spec: text, image: "Car.jpg"))
+        models.append(Model(name: "New model", spec: text, image: "Car.jpg",manufacturer: "None"))
         collectionView.reloadData()
     }
     
