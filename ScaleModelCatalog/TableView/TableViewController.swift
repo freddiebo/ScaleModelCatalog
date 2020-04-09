@@ -91,9 +91,9 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.selectedModel = models[indexPath.row].name
-        vc.selectedModelImage = models[indexPath.row].loadImage()
-        vc.selectedModelSpec = models[indexPath.row].spec
+        vc.modelSelectedName = models[indexPath.row].name
+        vc.modelSelectedImage = models[indexPath.row].loadImage()
+        vc.modelSelectedSpec = models[indexPath.row].spec
         navigationController?.pushViewController(vc, animated: true)
     }
     /*

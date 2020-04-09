@@ -58,29 +58,17 @@ class CollectionViewController: UICollectionViewController {
         let model = models[indexPath.row]
         
         cell.ModelName.text = model.name
-        /*let url = URL(string:model.image)
-        if let data = try? Data(contentsOf: url!)
-        {
-            cell.ModelImage.image = UIImage(data: data)
-        }*/
         cell.ModelImage.image = model.loadImage()
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*
-        if let vc = storyboard?.instantiateViewController(identifier: "DetailModel") as? DetailViewController {
-        
-            vc.selectedModel = models[indexPath.row].name
-            vc.selectedModelImage = models[indexPath.row].loadImage()
-            vc.selectedModelSpec = models[indexPath.row].spec
-            navigationController?.pushViewController(vc, animated: true)
-        }*/
+
         let vc = DetailViewController()
-        vc.selectedModel = models[indexPath.row].name
-        vc.selectedModelImage = models[indexPath.row].loadImage()
-        vc.selectedModelSpec = models[indexPath.row].spec
+        vc.modelSelectedName = models[indexPath.row].name
+        vc.modelSelectedImage = models[indexPath.row].loadImage()
+        vc.modelSelectedSpec = models[indexPath.row].spec
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -110,7 +98,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     @objc func AddModel() {
-        var text = "Test spec more. "
+        let text = "Test spec more. "
         models.append(Model(name: "New model", spec: text, image: "Car.jpg",manufacturer: "None"))
         collectionView.reloadData()
     }

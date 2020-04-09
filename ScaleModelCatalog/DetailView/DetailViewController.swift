@@ -8,25 +8,25 @@ import UIKit
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet var imageModel: UIImageView!    
-    @IBOutlet var specModelText: UITextView!
-    var selectedModel: String?
+    @IBOutlet var modelImage: UIImageView!    
+    @IBOutlet var modelTextSpec: UITextView!
+    var modelSelectedName: String?
     //var selectedModelImage: String = ""
-    var selectedModelImage: UIImage?
-    var selectedModelSpec: String = ""
+    var modelSelectedImage: UIImage?
+    var modelSelectedSpec: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = selectedModel
+        title = modelSelectedName
         navigationItem.largeTitleDisplayMode = .never
-        imageModel.image = selectedModelImage//UIImage(named: selectedModelImage)
-        specModelText.text = selectedModelSpec
+        modelImage.image = modelSelectedImage//UIImage(named: selectedModelImage)
+        modelTextSpec.text = modelSelectedSpec
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        imageModel.isUserInteractionEnabled = true
-        imageModel.addGestureRecognizer(tapGestureRecognizer)
+        modelImage.isUserInteractionEnabled = true
+        modelImage.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
     }
     
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         }*/
         let vc = ImageViewController()
-        vc.selectImage = selectedModelImage
+        vc.imageSelected = modelSelectedImage
         navigationController?.pushViewController(vc, animated: true)
     }
 

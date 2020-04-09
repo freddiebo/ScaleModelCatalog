@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,8 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="ScaleModelCatalog" customModuleProvider="target">
             <connections>
-                <outlet property="imageModel" destination="iHf-un-nEB" id="Rf3-Cj-zzo"/>
-                <outlet property="specModelText" destination="bZT-5G-Ky1" id="pp2-y2-d6K"/>
+                <outlet property="modelImage" destination="iHf-un-nEB" id="Rf3-Cj-zzo"/>
+                <outlet property="modelTextSpec" destination="bZT-5G-Ky1" id="pp2-y2-d6K"/>
                 <outlet property="view" destination="gkr-de-Aku" id="ibz-dR-xx5"/>
             </connections>
         </placeholder>
@@ -20,14 +19,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Default specification for model" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-5G-Ky1">
-                    <rect key="frame" x="20" y="461" width="374" height="401"/>
+                    <rect key="frame" x="20" y="456" width="374" height="440"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-un-nEB">
-                    <rect key="frame" x="20" y="46.5" width="374" height="403.5"/>
+                    <rect key="frame" x="20" y="0.0" width="374" height="448"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

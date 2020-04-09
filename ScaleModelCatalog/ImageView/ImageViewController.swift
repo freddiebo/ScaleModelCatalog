@@ -8,24 +8,24 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
 
-    //var selectImage: String = ""
-    var selectImage: UIImage?
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
+    var imageSelected: UIImage?
+    
+    @IBOutlet weak var viewScroll: UIScrollView!
+    @IBOutlet weak var viewImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = selectImage
+        viewImage.image = imageSelected
 
-        scrollView.minimumZoomScale = 1
-        scrollView.maximumZoomScale = 3
-        scrollView.delegate = self
+        viewScroll.minimumZoomScale = 1
+        viewScroll.maximumZoomScale = 3
+        viewScroll.delegate = self
     }
     
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        return viewImage
     }
     
     override func viewWillAppear(_ animated: Bool) {
