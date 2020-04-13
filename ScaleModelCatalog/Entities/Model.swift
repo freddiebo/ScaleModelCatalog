@@ -10,12 +10,13 @@
 import UIKit
 
 class Model: NSObject, Codable {
-    
+    var id: String
     var name: String
     var spec: String
     var image: String
     var manufacturer: String
-    init(name:String,spec:String,image:String,manufacturer: String) {
+    init(id: String, name:String,spec:String,image:String,manufacturer: String) {
+        self.id = id
         self.name = name
         self.spec = spec
         self.image = image
@@ -23,12 +24,17 @@ class Model: NSObject, Codable {
     }
     
     func loadImage() -> UIImage? {
+        var loadedImage = UIImage(named: "NoImage.png")
         if let url = URL(string:self.image) {
             if let data = try? Data(contentsOf: url)
             {
-                return UIImage(data: data)
+                loadedImage = UIImage(data: data)
+            }
+            else {
+                    let nameImage = id + ".jpg"
+                    loadedImage = UIImage(named: nameImage)
             }
         }
-        return UIImage(contentsOfFile: "NoImage.png")
+        return loadedImage
     }
 }
