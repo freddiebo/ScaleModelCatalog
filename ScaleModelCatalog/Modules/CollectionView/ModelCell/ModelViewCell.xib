@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +16,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-aa-7wd">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-aa-7wd">
                         <rect key="frame" x="10" y="10" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-Uk-7ch">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-Uk-7ch">
                         <rect key="frame" x="10" y="118" width="100" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="0a2-oY-fQ9"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Z4C-aa-7wd" firstAttribute="centerX" secondItem="hf1-N5-N1s" secondAttribute="centerX" id="5Ai-1g-pfB"/>
+                    <constraint firstItem="dlN-Uk-7ch" firstAttribute="bottom" secondItem="hf1-N5-N1s" secondAttribute="bottomMargin" id="A2I-u0-CRu"/>
+                    <constraint firstItem="Z4C-aa-7wd" firstAttribute="leading" secondItem="dlN-Uk-7ch" secondAttribute="leading" id="XlU-WC-EqG"/>
+                    <constraint firstItem="dlN-Uk-7ch" firstAttribute="top" secondItem="Z4C-aa-7wd" secondAttribute="bottom" constant="8" id="cxI-jR-WLe"/>
+                    <constraint firstItem="Z4C-aa-7wd" firstAttribute="top" secondItem="hf1-N5-N1s" secondAttribute="top" constant="10" id="mYd-iC-FWL"/>
+                    <constraint firstItem="Z4C-aa-7wd" firstAttribute="trailing" secondItem="dlN-Uk-7ch" secondAttribute="trailing" id="qmV-c1-oZd"/>
+                    <constraint firstItem="Z4C-aa-7wd" firstAttribute="leading" secondItem="hf1-N5-N1s" secondAttribute="leading" constant="10" id="wDO-f6-Pxv"/>
+                </constraints>
             </collectionViewCellContentView>
             <connections>
-                <outlet property="ModelImage" destination="Z4C-aa-7wd" id="qP5-V2-63A"/>
-                <outlet property="ModelName" destination="dlN-Uk-7ch" id="3BP-Wv-0tp"/>
+                <outlet property="modelImage" destination="Z4C-aa-7wd" id="qP5-V2-63A"/>
+                <outlet property="modelName" destination="dlN-Uk-7ch" id="3BP-Wv-0tp"/>
             </connections>
             <point key="canvasLocation" x="-81.159420289855078" y="83.705357142857139"/>
         </collectionViewCell>

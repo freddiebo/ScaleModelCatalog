@@ -9,6 +9,6 @@
 import UIKit
 
 struct Models: Codable {
-    var Body: [Model]
+    var body: [Model]
 }
 

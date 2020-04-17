@@ -18,15 +18,8 @@ class DetailPresenter: DetailPresenterProtocol {
         view?.loadInterface()
     }
     
-    func addTap(for imageView: UIImageView) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-        router?.presentImageView(for: tappedImage.image!, from: view!)
+    func imageViewShow(image: UIImage, from view: DetailViewProtocol) {
+        router?.presentImageView(for: image, from: view)
     }
 }
 

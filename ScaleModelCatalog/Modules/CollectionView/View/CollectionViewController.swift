@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Model"
 
-class CollectionViewController: UICollectionViewController,CollectionViewProtocol {
+class CollectionViewController: UICollectionViewController {
     
     var modelList = [Model]()
     var presenter: CollectionPresenterProtocol?
@@ -36,8 +36,8 @@ class CollectionViewController: UICollectionViewController,CollectionViewProtoco
         
         let model = modelList[indexPath.row]
         
-        cell.ModelName.text = model.name
-        cell.ModelImage.image = model.loadImage()
+        cell.modelName.text = model.name
+        cell.modelImage.image = model.loadImage()
         
         return cell
     }
@@ -59,10 +59,11 @@ class CollectionViewController: UICollectionViewController,CollectionViewProtoco
         modelList.append(Model(id:"", name: "New model", spec: text, image: "Car.jpg",manufacturer: "None"))
         collectionView.reloadData()
     }*/
-    
+}
+
+extension CollectionViewController: CollectionViewProtocol {
     func reloadInterface(with models: [Model]) {
         modelList = models
         collectionView.reloadData()
     }
-    
 }

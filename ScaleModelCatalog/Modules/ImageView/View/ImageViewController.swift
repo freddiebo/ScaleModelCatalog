@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIScrollViewDelegate, ImageViewProtocol {
+class ImageViewController: UIViewController, UIScrollViewDelegate {
     var presenter: ImagePresenterProtocol?
     var imageSelected: UIImage?
     
@@ -16,13 +16,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate, ImageViewProt
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-    }
-    
-    func loadInterface() {
-        viewImage.image = imageSelected
-        viewScroll.minimumZoomScale = 1
-        viewScroll.maximumZoomScale = 3
-        viewScroll.delegate = self
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -39,4 +32,13 @@ class ImageViewController: UIViewController, UIScrollViewDelegate, ImageViewProt
         navigationController?.hidesBarsOnTap = false
     }
 
+}
+
+extension ImageViewController: ImageViewProtocol {
+    func loadInterface() {
+        viewImage.image = imageSelected
+        viewScroll.minimumZoomScale = 1
+        viewScroll.maximumZoomScale = 3
+        viewScroll.delegate = self
+    }
 }

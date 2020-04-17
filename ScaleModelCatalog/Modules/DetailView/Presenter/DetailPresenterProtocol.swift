@@ -15,5 +15,6 @@ protocol DetailPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()// инициализация и конфигурирование первоначальных данных для view
-    func addTap(for imageView: UIImageView)
+    //func addTap(for imageView: UIImageView)
+    func imageViewShow(image: UIImage, from view: DetailViewProtocol)
 }

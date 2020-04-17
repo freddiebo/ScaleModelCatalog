@@ -10,8 +10,8 @@ import UIKit
 
 class ModelViewCell: UICollectionViewCell {
 
-    @IBOutlet var ModelImage: UIImageView!
-    @IBOutlet var ModelName: UILabel!
+    @IBOutlet var modelImage: UIImageView!
+    @IBOutlet var modelName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

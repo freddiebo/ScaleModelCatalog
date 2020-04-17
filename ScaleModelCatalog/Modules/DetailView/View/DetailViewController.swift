@@ -6,7 +6,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIScrollViewDelegate, DetailViewProtocol {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var model: Model?
     var presenter: DetailPresenterProtocol? 
@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, DetailViewPr
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        presenter?.addTap(for: modelImage)
+        addTap(for: modelImage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +28,20 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, DetailViewPr
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+    
+    func addTap(for imageView: UIImageView) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        presenter?.imageViewShow(image: tappedImage.image!, from: self)
+    }
+}
 
+extension DetailViewController: DetailViewProtocol {
     func loadInterface() {
         title = model?.name
         navigationItem.largeTitleDisplayMode = .never

@@ -12,10 +12,8 @@ import UIKit
 class TableInteractorInput: TableInteractorInputProtocol {
     let serviceServer: ServerServiceProtocol = ServerService()
     var presenter: TableInteractorOutputProtocol?
-    var models = [Model]()
     
     func retrieveModels() {
-        models = serviceServer.modelsAll
-        presenter?.didRetrieveModels(models)
+        presenter?.didRetrieveModels(serviceServer.models)
     }
 }

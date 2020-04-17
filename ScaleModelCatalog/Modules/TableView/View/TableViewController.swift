@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, TableViewProtocol {
+class TableViewController: UITableViewController {
     var presenter: TablePresenterProtocol?
     var models = [Model]()
     let cellReuseIdentifier = "cell"    
@@ -17,20 +17,13 @@ class TableViewController: UITableViewController, TableViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Group by Manufacture"
+        title = "Group by Manufacture"
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        self.tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.dataSource = self
         presenter?.viewDidLoad()
         //parseToGroup()
-    }
-    
-    func reloadInterface(with models:[Model], groupedModels: [String : [Model]], by group: [String])  {
-        self.models = models
-        self.GroupManufacture = groupedModels
-        self.listOfManufacture = group
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -64,8 +57,21 @@ class TableViewController: UITableViewController, TableViewProtocol {
         return listOfManufacture[section]
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
-        presenter?.detailViewShow(model: models[indexPath.row], from: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let key = listOfManufacture[indexPath.section]
+        if let value = GroupManufacture[key] {
+            presenter?.detailViewShow(model: value[indexPath.row], from: self)
+        }
+        //presenter?.detailViewShow(model: GroupManufacture[listOfManufacture[indexPath.section]], from: self)
     }
 
+}
+
+extension TableViewController: TableViewProtocol {
+    func reloadInterface(with models:[Model], groupedModels: [String : [Model]], by group: [String])  {
+        self.models = models
+        self.GroupManufacture = groupedModels
+        self.listOfManufacture = group
+        tableView.reloadData()
+    }
 }

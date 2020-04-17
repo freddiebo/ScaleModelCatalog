@@ -13,10 +13,8 @@ class CollectionInteractorInput: CollectionInteractorInputProtocol {
     
     let serviceServer: ServerServiceProtocol = ServerService()
     var presenter: CollectionInteractorOutputProtocol?
-    var models = [Model]()
     
     func retrieveModels() {
-        models = serviceServer.modelsAll
-        presenter?.didRetrieveModels(models)
+        presenter?.didRetrieveModels(serviceServer.models)
     }
 }

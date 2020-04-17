@@ -12,15 +12,15 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let CollectionView = CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
+        let viewCollection = CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
 
-        CollectionView.tabBarItem = UITabBarItem(title: "All Model", image: UIImage(systemName: "list.bullet"), tag: 0)
+        viewCollection.tabBarItem = UITabBarItem(title: "All Model", image: UIImage(systemName: "list.bullet"), tag: 0)
         
-        let TableView = TableRouter.createTableViewModule()//TableViewController(style: .grouped)
-        TableView.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
-        TableView.tabBarItem = UITabBarItem(title: "Group Model", image: UIImage(systemName: "list.bullet.below.rectangle"), tag: 1)
+        let viewTable = TableRouter.createTableViewModule()//TableViewController(style: .grouped)
+        viewTable.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
+        viewTable.tabBarItem = UITabBarItem(title: "Group Model", image: UIImage(systemName: "list.bullet.below.rectangle"), tag: 1)
         
-        let tabBarList = [CollectionView,TableView]
+        let tabBarList = [viewCollection,viewTable]
 
         viewControllers = tabBarList
         // Do any additional setup after loading the view.

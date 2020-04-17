@@ -11,11 +11,11 @@ import UIKit
 
 protocol ServerServiceProtocol: class {
     var urlModelSource: String { get }
-    var modelsAll: [Model] { get }
+    var models: [Model] { get }
 }
 
 class ServerService: ServerServiceProtocol {
-    var modelsAll: [Model] {
+    var models: [Model] {
         if let url = URL(string: urlModelSource) {
             if let data = try? Data(contentsOf: url) {
                 return parse(json: data)
@@ -25,7 +25,7 @@ class ServerService: ServerServiceProtocol {
     }
     
     var urlModelSource: String {
-        return "http://www.mocky.io/v2/5e90557a330000b31727d6c6"
+        return "http://www.mocky.io/v2/5e9823c23500005200c47ecb"
         //"http://www.mocky.io/v2/5e8747f03100000aff81a520"
         //"http://www.mocky.io/v2/5e8746733100008af581a50e"
     }
@@ -33,7 +33,7 @@ class ServerService: ServerServiceProtocol {
     private func parse(json: Data) -> [Model] {
         let decoder = JSONDecoder()
         if let jsonModels = try? decoder.decode(Models.self, from: json) {
-            return jsonModels.Body
+            return jsonModels.body
         }
         return []
     }
