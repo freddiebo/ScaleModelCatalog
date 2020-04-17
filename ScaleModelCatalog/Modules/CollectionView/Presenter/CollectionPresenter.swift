@@ -9,22 +9,35 @@
 import Foundation
 import UIKit
 
-class CollectionPresenter: CollectionPresenterProtocol {
-    weak var view: CollectionViewProtocol?
+class CollectionPresenter: BasePresenter {
+    weak var view: CollectionViewInputProtocol?
     var interactor: CollectionInteractorInputProtocol?
-    var router: CollectionRouterProtocol?
+    var router: CollectionRouterInputProtocol?
+}
 
+// MARK: - CollectionViewOutputProtocol
+extension CollectionPresenter: CollectionViewOutputProtocol {
     func viewDidLoad() {
         interactor?.retrieveModels()
     }
-    
-    func detailViewShow(model: Model, from view: CollectionViewProtocol) {
+    func detailViewShow(model: Model, from view: CollectionViewInputProtocol) {
         router?.presentDetailView(for: model, from: view)
     }
 }
 
+// MARK: - CollectionModuleInputProtocol
+extension CollectionPresenter: CollectionModuleInputProtocol {
+
+}
+
+// MARK: - CollectionInteractorOutputProtocol
 extension CollectionPresenter: CollectionInteractorOutputProtocol {
     func didRetrieveModels(_ models: [Model]) {
         view?.reloadInterface(with: models)
     }
+}
+
+// MARK: - CollectionRouterOutputProtocol
+extension CollectionPresenter: CollectionRouterOutputProtocol {
+
 }

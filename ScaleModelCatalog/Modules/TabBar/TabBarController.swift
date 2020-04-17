@@ -12,7 +12,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewCollection = CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
+        let viewCollection = CollectionAssembly.createCollectionViewModule()
+            //CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
 
         viewCollection.tabBarItem = UITabBarItem(title: "All Model", image: UIImage(systemName: "list.bullet"), tag: 0)
         

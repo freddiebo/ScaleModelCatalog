@@ -13,7 +13,7 @@ private let reuseIdentifier = "Model"
 class CollectionViewController: UICollectionViewController {
     
     var modelList = [Model]()
-    var presenter: CollectionPresenterProtocol?
+    var presenter: CollectionViewOutputProtocol?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class CollectionViewController: UICollectionViewController {
     }*/
 }
 
-extension CollectionViewController: CollectionViewProtocol {
+extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface(with models: [Model]) {
         modelList = models
         collectionView.reloadData()

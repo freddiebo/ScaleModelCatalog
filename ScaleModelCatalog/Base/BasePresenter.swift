@@ -6,4 +6,8 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class BasePresenter {
+    
+}

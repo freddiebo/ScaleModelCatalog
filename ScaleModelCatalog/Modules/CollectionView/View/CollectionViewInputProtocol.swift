@@ -1,5 +1,5 @@
 //
-//  BaseAssembly.swift
+//  CollectionViewInputProtocol.swift
 //  ScaleModelCatalog
 //
 //  Created by  Vladislav Bondarev on 17.04.2020.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BaseAssembly {
-    
+protocol CollectionViewInputProtocol: class {
+    func reloadInterface(with models: [Model])
 }

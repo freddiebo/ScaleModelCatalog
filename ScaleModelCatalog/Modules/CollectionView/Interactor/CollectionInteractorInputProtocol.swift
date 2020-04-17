@@ -8,13 +8,7 @@
 
 import UIKit
 
-protocol CollectionInteractorOutputProtocol: class {
-    // INTERACTOR -> PRESENTER
-    func didRetrieveModels(_ models: [Model])
-}
-
 protocol CollectionInteractorInputProtocol: class {
-    var presenter: CollectionInteractorOutputProtocol? { get set }
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
