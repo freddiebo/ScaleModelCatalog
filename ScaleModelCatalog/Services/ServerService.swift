@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-protocol ServerServiceProtocol: class {
-    var urlModelSource: String { get }
-    var models: [Model] { get }
-}
-
-class ServerService: ServerServiceProtocol {
+class ServerService {
+    static let shared = ServerService()
+    
+    private init() {}
+    
+    var list = [Model]()
     var models: [Model] {
         if let url = URL(string: urlModelSource) {
             if let data = try? Data(contentsOf: url) {
@@ -38,4 +38,23 @@ class ServerService: ServerServiceProtocol {
         return []
     }
     
+    func loadModels(completion: @escaping (_ listof: [Model]) -> Void) {
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let url = URL(string: urlModelSource)
+        let task = session.dataTask(with: url!, completionHandler: {
+            (data, response, error) in
+            if let data = data {
+                do {
+                    self.list = self.parse(json: data)
+                    DispatchQueue.main.async {
+                        completion(self.list)
+                    }
+                    print(self.list)
+                } catch {
+                    print("Error")
+                }
+            }
+        })
+        task.resume()
+    }
 }

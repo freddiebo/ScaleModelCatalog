@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class TableInteractorInput: TableInteractorInputProtocol {
-    let serviceServer: ServerServiceProtocol = ServerService()
+    let serviceServer = ServerService.shared
     var presenter: TableInteractorOutputProtocol?
     
     func retrieveModels() {

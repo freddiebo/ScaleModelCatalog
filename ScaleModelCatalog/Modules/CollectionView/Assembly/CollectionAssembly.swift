@@ -31,7 +31,7 @@ class CollectionAssembly: BaseAssembly {
         //interactor.notificationServiceManager = NotificationServiceManager.instance
         
         self.viewController = viewController
-        self.moduleInput = presenter as! CollectionModuleInputProtocol
+        self.moduleInput = presenter
 
         return self
     }

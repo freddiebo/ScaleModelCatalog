@@ -13,11 +13,11 @@ private let reuseIdentifier = "Model"
 class CollectionViewController: UICollectionViewController {
     
     var modelList = [Model]()
-    var presenter: CollectionViewOutputProtocol?
+    var presenter: CollectionViewOutputProtocol!
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter.viewDidLoad()
         //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddModel))
 
         // Register cell classes
@@ -37,13 +37,16 @@ class CollectionViewController: UICollectionViewController {
         let model = modelList[indexPath.row]
         
         cell.modelName.text = model.name
-        cell.modelImage.image = model.loadImage()
+        model.load() { image in
+            cell.modelImage.image = image
+        }
+        //cell.modelImage.image = model.loadImage()
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.detailViewShow(model: modelList[indexPath.row], from: self)
+        presenter.detailViewShow(model: modelList[indexPath.row], from: self)
     }
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -60,7 +63,7 @@ class CollectionViewController: UICollectionViewController {
         collectionView.reloadData()
     }*/
 }
-
+// MARK: - CollectionViewInputProtocol
 extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface(with models: [Model]) {
         modelList = models

@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-class CollectionRouter:BaseRouter {
+class CollectionRouter: BaseRouter {
     weak var presenter: CollectionViewOutputProtocol!
 }
 
+// MARK: - CollectionRouterInputProtocol
 extension CollectionRouter: CollectionRouterInputProtocol {
     func presentDetailView(for model: Model, from view: CollectionViewInputProtocol) {
-        let detailView = DetailRouter.createDetailViewModule(for: model)
+        let detailView = DetailAssembly.createDetailViewModule(for: model)
+        //DetailRouter.createDetailViewModule(for: model)
         if let sourceView = view as? UICollectionViewController {
             sourceView.navigationController?.pushViewController(detailView, animated: true)
         }

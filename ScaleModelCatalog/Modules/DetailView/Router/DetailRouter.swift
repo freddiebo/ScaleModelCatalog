@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DetailRouter: DetailRouterProtocol {
+/*class DetailRouter: DetailRouterProtocol {
     class func createDetailViewModule(for model: Model) -> UIViewController {
         let view = DetailViewController(nibName: "DetailViewController", bundle: nil)
         let presenter: DetailPresenterProtocol & DetailInteractorOutputProtocol = DetailPresenter()
@@ -33,4 +33,18 @@ class DetailRouter: DetailRouterProtocol {
         }
     }
     weak var viewController: DetailViewController!
+}*/
+
+class DetailRouter: BaseRouter {
+    weak var presenter: DetailViewOutputProtocol!
+}
+
+// MARK: - DetailRouterInputProtocol
+extension DetailRouter: DetailRouterInputProtocol {
+    func presentImageView(for image: UIImage, from view: DetailViewInputProtocol) {
+        let imageView = ImageRouter.createImageViewModule(for: image)
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(imageView, animated: true)
+        }
+    }
 }

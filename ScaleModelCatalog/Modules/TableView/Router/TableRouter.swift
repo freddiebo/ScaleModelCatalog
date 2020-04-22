@@ -27,7 +27,7 @@ class TableRouter: TableRouterProtocol {
     }
     
     func presentDetailView(for model: Model, from view: TableViewProtocol) {
-        let detailView = DetailRouter.createDetailViewModule(for: model)
+        let detailView = DetailAssembly.createDetailViewModule(for: model)
         if let sourceView = view as? UITableViewController {
             sourceView.navigationController?.pushViewController(detailView, animated: true)
         }

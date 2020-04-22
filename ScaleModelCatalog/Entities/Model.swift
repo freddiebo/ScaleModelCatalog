@@ -36,4 +36,26 @@ struct Model:Codable {
         }
         return loadedImage
     }
+    
+    func load(completion: @escaping (_ image: UIImage?) -> Void) {
+        var loadedImage = UIImage(named: "NoImage.png")
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let url = URL(string: self.image)
+        let task = session.dataTask(with: url!, completionHandler: {
+            (data, response, error) in
+            if let data = data {
+                do {
+                    loadedImage = UIImage(data: data)
+                } catch {
+                    let nameImage = self.id + ".jpg"
+                    loadedImage = UIImage(named: nameImage)
+                    print("Error")
+                }
+            }
+            DispatchQueue.main.async {
+                completion(loadedImage)
+            }
+        })
+        task.resume()
+    }
 }

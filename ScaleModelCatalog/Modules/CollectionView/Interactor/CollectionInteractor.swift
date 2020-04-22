@@ -10,13 +10,17 @@ import Foundation
 import UIKit
 
 class CollectionInteractor: BaseInteractor {
-    var serviceServer: ServerServiceProtocol = ServerService()
+    var serviceServer = ServerService.shared
     var presenter: CollectionInteractorOutputProtocol?
 }
 
 // MARK: - CollectionInteractorInputProtocol
 extension CollectionInteractor: CollectionInteractorInputProtocol {
     func retrieveModels() {
-        presenter?.didRetrieveModels(serviceServer.models)
+        serviceServer.loadModels() { listof in
+            self.presenter?.didRetrieveModels(listof)
+        }
+        
+        presenter?.didRetrieveModels(serviceServer.list)
     }
 }

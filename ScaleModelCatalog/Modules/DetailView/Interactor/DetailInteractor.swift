@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
-class DetailInteractorInput: DetailInteractorInputProtocol {
+class DetailInteractor: BaseInteractor {
     var presenter: DetailInteractorOutputProtocol?
+}
+
+// MARK: - DetailInteractorInputProtocol
+extension DetailInteractor: DetailInteractorInputProtocol {
+
 }

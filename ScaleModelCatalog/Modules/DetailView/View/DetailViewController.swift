@@ -9,7 +9,7 @@ import UIKit
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var model: Model?
-    var presenter: DetailPresenterProtocol? 
+    var presenter: DetailViewOutputProtocol?
     @IBOutlet var modelImage: UIImageView!
     @IBOutlet var modelTextSpec: UITextView!
     
@@ -41,7 +41,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-extension DetailViewController: DetailViewProtocol {
+// MARK: - DetailViewInputProtocol
+extension DetailViewController: DetailViewInputProtocol {
     func loadInterface() {
         title = model?.name
         navigationItem.largeTitleDisplayMode = .never
