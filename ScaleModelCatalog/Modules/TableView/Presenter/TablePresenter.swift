@@ -6,23 +6,14 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class TablePresenter: TablePresenterProtocol {
-    weak var view: TableViewProtocol?
+class TablePresenter: BasePresenter {
+    weak var view: TableViewInputProtocol?
     var interactor: TableInteractorInputProtocol?
-    var router: TableRouterProtocol?
+    var router: TableRouterInputProtocol?
     var GroupManufacture = [String: [Model]]()
     var listOfManufacture = [String] ()
-    
-    func viewDidLoad() {
-        interactor?.retrieveModels()
-    }
-    
-    func detailViewShow(model: Model, from view: TableViewProtocol) {
-        router?.presentDetailView(for: model, from: view)
-    }
     
     func parseToGroup(_ models: [Model]) {
         for model in models {
@@ -37,10 +28,30 @@ class TablePresenter: TablePresenterProtocol {
     }
 }
 
-extension TablePresenter: TableInteractorOutputProtocol {
+// MARK: - TableViewOutputProtocol
+extension TablePresenter: TableViewOutputProtocol {
+    func viewDidLoad() {
+        interactor?.retrieveModels()
+    }
+    func detailViewShow(model: Model, from view: TableViewInputProtocol) {
+        router?.presentDetailView(for: model, from: view)
+    }
+}
 
+// MARK: - TableModuleInputProtocol
+extension TablePresenter: TableModuleInputProtocol {
+
+}
+
+// MARK: - TableInteractorOutputProtocol
+extension TablePresenter: TableInteractorOutputProtocol {
     func didRetrieveModels(_ models: [Model]) {
         parseToGroup(models)
         view?.reloadInterface(with: models,groupedModels: GroupManufacture, by: listOfManufacture)
     }
+}
+
+// MARK: - TableRouterOutputProtocol
+extension TablePresenter: TableRouterOutputProtocol {
+
 }

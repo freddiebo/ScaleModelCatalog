@@ -6,9 +6,13 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class ImageInteractorInput: ImageInteractorInputProtocol {
+class ImageInteractor: BaseInteractor {
     var presenter: ImageInteractorOutputProtocol?
+}
+
+// MARK: - DetailInteractorInputProtocol
+extension ImageInteractor: ImageInteractorInputProtocol {
+
 }

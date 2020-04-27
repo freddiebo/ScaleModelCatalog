@@ -22,7 +22,7 @@ class CollectionViewController: UICollectionViewController {
 
         // Register cell classes
         let nibCell = UINib(nibName: "ModelViewCell", bundle: nil)
-        self.collectionView!.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)        
+        self.collectionView?.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

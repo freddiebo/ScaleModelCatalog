@@ -5,20 +5,34 @@
 //  Created by  Vladislav Bondarev on 13.04.2020.
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
-
-import Foundation
 import UIKit
 
-class ImagePresenter: ImagePresenterProtocol {
-    weak var view: ImageViewProtocol?
+class ImagePresenter: BasePresenter {
+    weak var view: ImageViewInputProtocol?
     var interactor: ImageInteractorInputProtocol?
-    var router: ImageRouterProtocol?
-    
+    var router: ImageRouterInputProtocol?
+}
+
+// MARK: - ImageViewOutputProtocol
+extension ImagePresenter: ImageViewOutputProtocol {
     func viewDidLoad() {
         view?.loadInterface()
     }
+    
 }
 
+// MARK: - ImageModuleInputProtocol
+extension ImagePresenter: ImageModuleInputProtocol {
+
+}
+
+// MARK: - ImageInteractorOutputProtocol
 extension ImagePresenter: ImageInteractorOutputProtocol {
 
 }
+
+// MARK: - ImageRouterOutputProtocol
+extension ImagePresenter: ImageRouterOutputProtocol {
+
+}
+

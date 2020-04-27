@@ -10,6 +10,25 @@
 		2246FEBC242258510009F8EC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEBB242258510009F8EC /* Model.swift */; };
 		2246FEC12423B21F0009F8EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEC02423B21F0009F8EC /* DetailViewController.swift */; };
 		2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270F72D2429064800F1F730 /* ImageViewController.swift */; };
+		228580662456EF840075EC08 /* ImageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580652456EF840075EC08 /* ImageAssembly.swift */; };
+		228580682456F0A30075EC08 /* ImageInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580672456F0A30075EC08 /* ImageInteractorInputProtocol.swift */; };
+		2285806A2456F0B10075EC08 /* ImageInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580692456F0B10075EC08 /* ImageInteractorOutputProtocol.swift */; };
+		2285806C2456F1890075EC08 /* ImageModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285806B2456F1890075EC08 /* ImageModuleInputProtocol.swift */; };
+		2285806E2456F1930075EC08 /* ImageModuleOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285806D2456F1930075EC08 /* ImageModuleOutputProtocol.swift */; };
+		228580702456F21E0075EC08 /* ImageViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285806F2456F21E0075EC08 /* ImageViewInputProtocol.swift */; };
+		228580722456F2280075EC08 /* ImageViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580712456F2280075EC08 /* ImageViewOutputProtocol.swift */; };
+		228580742456F3490075EC08 /* ImageRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580732456F3490075EC08 /* ImageRouterInputProtocol.swift */; };
+		228580762456F3550075EC08 /* ImageRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580752456F3550075EC08 /* ImageRouterOutputProtocol.swift */; };
+		228580782456F3E00075EC08 /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580772456F3E00075EC08 /* ImageRouter.swift */; };
+		2285807B245702300075EC08 /* TableAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285807A245702300075EC08 /* TableAssembly.swift */; };
+		2285807D2457029B0075EC08 /* TableInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285807C2457029B0075EC08 /* TableInteractorInputProtocol.swift */; };
+		2285807F245702C20075EC08 /* TableInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285807E245702C20075EC08 /* TableInteractorOutputProtocol.swift */; };
+		228580812457070F0075EC08 /* TableModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580802457070F0075EC08 /* TableModuleInputProtocol.swift */; };
+		22858083245707210075EC08 /* TableModuleOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22858082245707210075EC08 /* TableModuleOutputProtocol.swift */; };
+		22858085245707BB0075EC08 /* TableViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22858084245707BB0075EC08 /* TableViewInputProtocol.swift */; };
+		22858087245707C50075EC08 /* TableViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22858086245707C50075EC08 /* TableViewOutputProtocol.swift */; };
+		2285808924570A2A0075EC08 /* TableRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285808824570A2A0075EC08 /* TableRouterInputProtocol.swift */; };
+		2285808B24570A340075EC08 /* TableRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285808A24570A340075EC08 /* TableRouterOutputProtocol.swift */; };
 		2293CA462449B4F90072F59E /* CollectionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA452449B4F90072F59E /* CollectionAssembly.swift */; };
 		2293CA492449B6C80072F59E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA482449B6C80072F59E /* BaseViewController.swift */; };
 		2293CA4B2449B6D30072F59E /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA4A2449B6D30072F59E /* BaseAssembly.swift */; };
@@ -45,20 +64,11 @@
 		22D0027F2442687F007A13C4 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0027E2442687F007A13C4 /* DetailPresenter.swift */; };
 		22D00281244268E9007A13C4 /* DetailInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00280244268E9007A13C4 /* DetailInteractorOutputProtocol.swift */; };
 		22D002832442690E007A13C4 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002822442690E007A13C4 /* DetailInteractor.swift */; };
-		22D0028624446D82007A13C4 /* ImageRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0028524446D82007A13C4 /* ImageRouterProtocol.swift */; };
-		22D0028824446D90007A13C4 /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0028724446D90007A13C4 /* ImageRouter.swift */; };
-		22D0028B24446E3B007A13C4 /* ImagePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0028A24446E3B007A13C4 /* ImagePresenterProtocol.swift */; };
 		22D0028D24446E46007A13C4 /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0028C24446E46007A13C4 /* ImagePresenter.swift */; };
-		22D0029024446E71007A13C4 /* ImageInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0028F24446E71007A13C4 /* ImageInteractorProtocol.swift */; };
 		22D0029224446E84007A13C4 /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029124446E84007A13C4 /* ImageInteractor.swift */; };
-		22D0029524446EF1007A13C4 /* ImageViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029424446EF1007A13C4 /* ImageViewProtocol.swift */; };
-		22D0029824448624007A13C4 /* TableRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029724448624007A13C4 /* TableRouterProtocol.swift */; };
 		22D0029A24448633007A13C4 /* TableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029924448633007A13C4 /* TableRouter.swift */; };
-		22D0029D2444873F007A13C4 /* TablePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029C2444873F007A13C4 /* TablePresenterProtocol.swift */; };
 		22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029E2444874B007A13C4 /* TablePresenter.swift */; };
-		22D002A22444879D007A13C4 /* TableInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A12444879D007A13C4 /* TableInteractorProtocol.swift */; };
 		22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A3244487C0007A13C4 /* TableInteractor.swift */; };
-		22D002A724448885007A13C4 /* TableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A624448885007A13C4 /* TableViewControllerProtocol.swift */; };
 		22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */ = {isa = PBXBuildFile; fileRef = 22D002B52444A04E007A13C4 /* ScaleCar.json */; };
 		22F09B29244D864B00440E6A /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B28244D864B00440E6A /* DetailAssembly.swift */; };
 		22F09B2B244D870600440E6A /* DetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B2A244D870600440E6A /* DetailInteractorInputProtocol.swift */; };
@@ -74,6 +84,25 @@
 		2246FEBB242258510009F8EC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2246FEC02423B21F0009F8EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2270F72D2429064800F1F730 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		228580652456EF840075EC08 /* ImageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssembly.swift; sourceTree = "<group>"; };
+		228580672456F0A30075EC08 /* ImageInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		228580692456F0B10075EC08 /* ImageInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		2285806B2456F1890075EC08 /* ImageModuleInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleInputProtocol.swift; sourceTree = "<group>"; };
+		2285806D2456F1930075EC08 /* ImageModuleOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleOutputProtocol.swift; sourceTree = "<group>"; };
+		2285806F2456F21E0075EC08 /* ImageViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewInputProtocol.swift; sourceTree = "<group>"; };
+		228580712456F2280075EC08 /* ImageViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewOutputProtocol.swift; sourceTree = "<group>"; };
+		228580732456F3490075EC08 /* ImageRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouterInputProtocol.swift; sourceTree = "<group>"; };
+		228580752456F3550075EC08 /* ImageRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouterOutputProtocol.swift; sourceTree = "<group>"; };
+		228580772456F3E00075EC08 /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
+		2285807A245702300075EC08 /* TableAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAssembly.swift; sourceTree = "<group>"; };
+		2285807C2457029B0075EC08 /* TableInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		2285807E245702C20075EC08 /* TableInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		228580802457070F0075EC08 /* TableModuleInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModuleInputProtocol.swift; sourceTree = "<group>"; };
+		22858082245707210075EC08 /* TableModuleOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModuleOutputProtocol.swift; sourceTree = "<group>"; };
+		22858084245707BB0075EC08 /* TableViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInputProtocol.swift; sourceTree = "<group>"; };
+		22858086245707C50075EC08 /* TableViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOutputProtocol.swift; sourceTree = "<group>"; };
+		2285808824570A2A0075EC08 /* TableRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouterInputProtocol.swift; sourceTree = "<group>"; };
+		2285808A24570A340075EC08 /* TableRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouterOutputProtocol.swift; sourceTree = "<group>"; };
 		2293CA452449B4F90072F59E /* CollectionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAssembly.swift; sourceTree = "<group>"; };
 		2293CA482449B6C80072F59E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2293CA4A2449B6D30072F59E /* BaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembly.swift; sourceTree = "<group>"; };
@@ -111,20 +140,11 @@
 		22D0027E2442687F007A13C4 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		22D00280244268E9007A13C4 /* DetailInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		22D002822442690E007A13C4 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
-		22D0028524446D82007A13C4 /* ImageRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouterProtocol.swift; sourceTree = "<group>"; };
-		22D0028724446D90007A13C4 /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
-		22D0028A24446E3B007A13C4 /* ImagePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenterProtocol.swift; sourceTree = "<group>"; };
 		22D0028C24446E46007A13C4 /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
-		22D0028F24446E71007A13C4 /* ImageInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorProtocol.swift; sourceTree = "<group>"; };
 		22D0029124446E84007A13C4 /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
-		22D0029424446EF1007A13C4 /* ImageViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewProtocol.swift; sourceTree = "<group>"; };
-		22D0029724448624007A13C4 /* TableRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouterProtocol.swift; sourceTree = "<group>"; };
 		22D0029924448633007A13C4 /* TableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouter.swift; sourceTree = "<group>"; };
-		22D0029C2444873F007A13C4 /* TablePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenterProtocol.swift; sourceTree = "<group>"; };
 		22D0029E2444874B007A13C4 /* TablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenter.swift; sourceTree = "<group>"; };
-		22D002A12444879D007A13C4 /* TableInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractorProtocol.swift; sourceTree = "<group>"; };
 		22D002A3244487C0007A13C4 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
-		22D002A624448885007A13C4 /* TableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerProtocol.swift; sourceTree = "<group>"; };
 		22D002B52444A04E007A13C4 /* ScaleCar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScaleCar.json; sourceTree = "<group>"; };
 		22F09B28244D864B00440E6A /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		22F09B2A244D870600440E6A /* DetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
@@ -147,6 +167,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		228580642456EF5F0075EC08 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				228580652456EF840075EC08 /* ImageAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		228580792457021C0075EC08 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				2285807A245702300075EC08 /* TableAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		2292E21D243B7CF600762704 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +194,10 @@
 		2292E21E243B7D0200762704 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				22D002A52444886E007A13C4 /* View */,
+				228580792457021C0075EC08 /* Assembly */,
 				22D002A024448784007A13C4 /* Interactor */,
 				22D0029B2444872A007A13C4 /* Presenter */,
+				22D002A52444886E007A13C4 /* View */,
 				22D0029624448608007A13C4 /* Router */,
 			);
 			path = TableView;
@@ -232,9 +269,10 @@
 		22B83D8D2436257F0001FFB5 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
-				22D0029324446E8B007A13C4 /* View */,
+				228580642456EF5F0075EC08 /* Assembly */,
 				22D0028E24446E55007A13C4 /* Interactor */,
 				22D0028924446E2B007A13C4 /* Presenter */,
+				22D0029324446E8B007A13C4 /* View */,
 				22D0028424446D10007A13C4 /* Router */,
 			);
 			path = ImageView;
@@ -379,8 +417,9 @@
 		22D0028424446D10007A13C4 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				22D0028524446D82007A13C4 /* ImageRouterProtocol.swift */,
-				22D0028724446D90007A13C4 /* ImageRouter.swift */,
+				228580752456F3550075EC08 /* ImageRouterOutputProtocol.swift */,
+				228580732456F3490075EC08 /* ImageRouterInputProtocol.swift */,
+				228580772456F3E00075EC08 /* ImageRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -388,8 +427,9 @@
 		22D0028924446E2B007A13C4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				22D0028A24446E3B007A13C4 /* ImagePresenterProtocol.swift */,
+				2285806D2456F1930075EC08 /* ImageModuleOutputProtocol.swift */,
 				22D0028C24446E46007A13C4 /* ImagePresenter.swift */,
+				2285806B2456F1890075EC08 /* ImageModuleInputProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -397,7 +437,8 @@
 		22D0028E24446E55007A13C4 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				22D0028F24446E71007A13C4 /* ImageInteractorProtocol.swift */,
+				228580692456F0B10075EC08 /* ImageInteractorOutputProtocol.swift */,
+				228580672456F0A30075EC08 /* ImageInteractorInputProtocol.swift */,
 				22D0029124446E84007A13C4 /* ImageInteractor.swift */,
 			);
 			path = Interactor;
@@ -408,7 +449,8 @@
 			children = (
 				22B83D762434CFF90001FFB5 /* ImageViewController.xib */,
 				2270F72D2429064800F1F730 /* ImageViewController.swift */,
-				22D0029424446EF1007A13C4 /* ImageViewProtocol.swift */,
+				2285806F2456F21E0075EC08 /* ImageViewInputProtocol.swift */,
+				228580712456F2280075EC08 /* ImageViewOutputProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -416,7 +458,8 @@
 		22D0029624448608007A13C4 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				22D0029724448624007A13C4 /* TableRouterProtocol.swift */,
+				2285808A24570A340075EC08 /* TableRouterOutputProtocol.swift */,
+				2285808824570A2A0075EC08 /* TableRouterInputProtocol.swift */,
 				22D0029924448633007A13C4 /* TableRouter.swift */,
 			);
 			path = Router;
@@ -425,7 +468,8 @@
 		22D0029B2444872A007A13C4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				22D0029C2444873F007A13C4 /* TablePresenterProtocol.swift */,
+				228580802457070F0075EC08 /* TableModuleInputProtocol.swift */,
+				22858082245707210075EC08 /* TableModuleOutputProtocol.swift */,
 				22D0029E2444874B007A13C4 /* TablePresenter.swift */,
 			);
 			path = Presenter;
@@ -434,7 +478,8 @@
 		22D002A024448784007A13C4 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				22D002A12444879D007A13C4 /* TableInteractorProtocol.swift */,
+				2285807E245702C20075EC08 /* TableInteractorOutputProtocol.swift */,
+				2285807C2457029B0075EC08 /* TableInteractorInputProtocol.swift */,
 				22D002A3244487C0007A13C4 /* TableInteractor.swift */,
 			);
 			path = Interactor;
@@ -443,7 +488,8 @@
 		22D002A52444886E007A13C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22D002A624448885007A13C4 /* TableViewControllerProtocol.swift */,
+				22858086245707C50075EC08 /* TableViewOutputProtocol.swift */,
+				22858084245707BB0075EC08 /* TableViewInputProtocol.swift */,
 				22B83D98243785C70001FFB5 /* TableViewController.swift */,
 			);
 			path = View;
@@ -533,23 +579,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D0029A24448633007A13C4 /* TableRouter.swift in Sources */,
-				22D0028B24446E3B007A13C4 /* ImagePresenterProtocol.swift in Sources */,
+				2285808B24570A340075EC08 /* TableRouterOutputProtocol.swift in Sources */,
+				228580682456F0A30075EC08 /* ImageInteractorInputProtocol.swift in Sources */,
 				22D0027B24426823007A13C4 /* DetailRouter.swift in Sources */,
+				2285806A2456F0B10075EC08 /* ImageInteractorOutputProtocol.swift in Sources */,
+				2285808924570A2A0075EC08 /* TableRouterInputProtocol.swift in Sources */,
 				2293CA5B2449C41A0072F59E /* CollectionViewOutputProtocol.swift in Sources */,
 				22D0027F2442687F007A13C4 /* DetailPresenter.swift in Sources */,
 				22D00281244268E9007A13C4 /* DetailInteractorOutputProtocol.swift in Sources */,
+				228580702456F21E0075EC08 /* ImageViewInputProtocol.swift in Sources */,
 				22D0029224446E84007A13C4 /* ImageInteractor.swift in Sources */,
-				22D0029D2444873F007A13C4 /* TablePresenterProtocol.swift in Sources */,
+				228580782456F3E00075EC08 /* ImageRouter.swift in Sources */,
 				22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */,
 				22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */,
+				2285807D2457029B0075EC08 /* TableInteractorInputProtocol.swift in Sources */,
+				2285806C2456F1890075EC08 /* ImageModuleInputProtocol.swift in Sources */,
 				2293CA492449B6C80072F59E /* BaseViewController.swift in Sources */,
-				22D0029824448624007A13C4 /* TableRouterProtocol.swift in Sources */,
 				2293CA532449C1440072F59E /* CollectionInteractorOutputProtocol.swift in Sources */,
 				2293CA552449C2CE0072F59E /* CollectionModuleInputProtocol.swift in Sources */,
 				2293CA512449B7040072F59E /* BaseInteractor.swift in Sources */,
 				2246FEBC242258510009F8EC /* Model.swift in Sources */,
 				22F09B33244D897000440E6A /* DetailViewInputProtocol.swift in Sources */,
 				22D0022C243F3E8A007A13C4 /* CollectionInteractorInputProtocol.swift in Sources */,
+				2285807B245702300075EC08 /* TableAssembly.swift in Sources */,
 				22D002832442690E007A13C4 /* DetailInteractor.swift in Sources */,
 				229E1CD72420EF20000F3957 /* AppDelegate.swift in Sources */,
 				2293CA4D2449B6DF0072F59E /* BaseRouter.swift in Sources */,
@@ -557,15 +609,20 @@
 				2293CA5D2449CB3F0072F59E /* CollectionRouterInputProtocol.swift in Sources */,
 				22D0023F2440615E007A13C4 /* ServerService.swift in Sources */,
 				2293CA4F2449B6E90072F59E /* BasePresenter.swift in Sources */,
+				22858087245707C50075EC08 /* TableViewOutputProtocol.swift in Sources */,
 				22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */,
+				2285807F245702C20075EC08 /* TableInteractorOutputProtocol.swift in Sources */,
+				228580762456F3550075EC08 /* ImageRouterOutputProtocol.swift in Sources */,
 				22F09B2B244D870600440E6A /* DetailInteractorInputProtocol.swift in Sources */,
+				2285806E2456F1930075EC08 /* ImageModuleOutputProtocol.swift in Sources */,
 				2293CA592449C40A0072F59E /* CollectionViewInputProtocol.swift in Sources */,
-				22D0029524446EF1007A13C4 /* ImageViewProtocol.swift in Sources */,
+				22858083245707210075EC08 /* TableModuleOutputProtocol.swift in Sources */,
+				228580722456F2280075EC08 /* ImageViewOutputProtocol.swift in Sources */,
 				22F09B2D244D88AF00440E6A /* DetailModuleInputProtocol.swift in Sources */,
 				22F09B2F244D88DE00440E6A /* DetailModuleOutputProtocol.swift in Sources */,
 				22B83D91243728F30001FFB5 /* TabBarController.swift in Sources */,
+				22858085245707BB0075EC08 /* TableViewInputProtocol.swift in Sources */,
 				22B83D882435E4780001FFB5 /* ModelViewCell.swift in Sources */,
-				22D002A724448885007A13C4 /* TableViewControllerProtocol.swift in Sources */,
 				2293CA4B2449B6D30072F59E /* BaseAssembly.swift in Sources */,
 				22D00235243F6B2C007A13C4 /* CollectionInteractor.swift in Sources */,
 				22CADCC3243205310038BAA7 /* Models.swift in Sources */,
@@ -573,18 +630,17 @@
 				22D0028D24446E46007A13C4 /* ImagePresenter.swift in Sources */,
 				22F09B37244D8F5A00440E6A /* DetailRouterInputProtocol.swift in Sources */,
 				2293CA572449C2DE0072F59E /* CollectionModuleOutputProtocol.swift in Sources */,
-				22D0028624446D82007A13C4 /* ImageRouterProtocol.swift in Sources */,
-				22D0029024446E71007A13C4 /* ImageInteractorProtocol.swift in Sources */,
 				2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */,
 				2246FEC12423B21F0009F8EC /* DetailViewController.swift in Sources */,
 				22F09B29244D864B00440E6A /* DetailAssembly.swift in Sources */,
-				22D002A22444879D007A13C4 /* TableInteractorProtocol.swift in Sources */,
+				228580812457070F0075EC08 /* TableModuleInputProtocol.swift in Sources */,
 				22D002412440CE54007A13C4 /* CollectionRouter.swift in Sources */,
 				22F09B31244D896000440E6A /* DetailViewOutputProtocol.swift in Sources */,
+				228580662456EF840075EC08 /* ImageAssembly.swift in Sources */,
 				229E1CD92420EF20000F3957 /* SceneDelegate.swift in Sources */,
 				22F09B35244D8F4400440E6A /* DetailRouterOutputProtocol.swift in Sources */,
-				22D0028824446D90007A13C4 /* ImageRouter.swift in Sources */,
 				2293CA462449B4F90072F59E /* CollectionAssembly.swift in Sources */,
+				228580742456F3490075EC08 /* ImageRouterInputProtocol.swift in Sources */,
 				2293CA5F2449CB500072F59E /* CollectionRouterOutputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

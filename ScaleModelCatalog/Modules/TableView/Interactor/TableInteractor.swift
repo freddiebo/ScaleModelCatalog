@@ -6,14 +6,18 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class TableInteractorInput: TableInteractorInputProtocol {
-    let serviceServer = ServerService.shared
+class TableInteractor: BaseInteractor {
+    var serviceServer = ServerService.shared
     var presenter: TableInteractorOutputProtocol?
-    
+}
+
+// MARK: - TableInteractorInputProtocol
+extension TableInteractor: TableInteractorInputProtocol {
     func retrieveModels() {
-        presenter?.didRetrieveModels(serviceServer.models)
+        serviceServer.loadModels() { listof in
+            self.presenter?.didRetrieveModels(listof)
+        }
     }
 }

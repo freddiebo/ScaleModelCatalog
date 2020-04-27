@@ -42,7 +42,8 @@ class DetailRouter: BaseRouter {
 // MARK: - DetailRouterInputProtocol
 extension DetailRouter: DetailRouterInputProtocol {
     func presentImageView(for image: UIImage, from view: DetailViewInputProtocol) {
-        let imageView = ImageRouter.createImageViewModule(for: image)
+        let imageView = ImageAssembly.createImageViewModule(for: image)
+        //DetailRouter.createDetailViewModule(for: model)
         if let sourceView = view as? UIViewController {
             sourceView.navigationController?.pushViewController(imageView, animated: true)
         }

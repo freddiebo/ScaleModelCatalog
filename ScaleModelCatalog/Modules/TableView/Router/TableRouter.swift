@@ -6,32 +6,19 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class TableRouter: TableRouterProtocol {
-    
-    class func createTableViewModule() -> UIViewController {
-        let view = TableViewController(style: .grouped)
-        let presenter: TablePresenterProtocol & TableInteractorOutputProtocol = TablePresenter()
-        let interactor: TableInteractorInputProtocol = TableInteractorInput()
-        let router: TableRouterProtocol = TableRouter()
+class TableRouter: BaseRouter {
+    weak var presenter: TableViewOutputProtocol!
+}
 
-        view.presenter = presenter
-        presenter.view = view
-        presenter.router = router
-        presenter.interactor = interactor
-        interactor.presenter = presenter
-
-        return view
-    }
-    
-    func presentDetailView(for model: Model, from view: TableViewProtocol) {
+// MARK: - TableRouterInputProtocol
+extension TableRouter: TableRouterInputProtocol {
+    func presentDetailView(for model: Model, from view: TableViewInputProtocol) {
         let detailView = DetailAssembly.createDetailViewModule(for: model)
-        if let sourceView = view as? UITableViewController {
+        //DetailRouter.createDetailViewModule(for: model)
+        if let sourceView = view as? UICollectionViewController {
             sourceView.navigationController?.pushViewController(detailView, animated: true)
         }
     }
-    
-    weak var viewController: TableViewController!
 }

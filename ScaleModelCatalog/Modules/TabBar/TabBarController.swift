@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
 
         viewCollection.tabBarItem = UITabBarItem(title: "All Model", image: UIImage(systemName: "list.bullet"), tag: 0)
         
-        let viewTable = TableRouter.createTableViewModule()//TableViewController(style: .grouped)
+        let viewTable = TableAssembly.createTableViewModule()
         viewTable.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
         viewTable.tabBarItem = UITabBarItem(title: "Group Model", image: UIImage(systemName: "list.bullet.below.rectangle"), tag: 1)
         

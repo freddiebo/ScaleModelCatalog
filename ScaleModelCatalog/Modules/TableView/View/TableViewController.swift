@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-    var presenter: TablePresenterProtocol?
+    var presenter: TableViewOutputProtocol!
     var models = [Model]()
     let cellReuseIdentifier = "cell"    
     var GroupManufacture = [String: [Model]]()
@@ -67,7 +67,8 @@ class TableViewController: UITableViewController {
 
 }
 
-extension TableViewController: TableViewProtocol {
+// MARK: - TableViewInputProtocol
+extension TableViewController: TableViewInputProtocol {
     func reloadInterface(with models:[Model], groupedModels: [String : [Model]], by group: [String])  {
         self.models = models
         self.GroupManufacture = groupedModels
