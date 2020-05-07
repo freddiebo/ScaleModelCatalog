@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vladislav Bondarev. All rights reserved.
 //
 
+import Moya
 import Foundation
 import UIKit
 
@@ -15,6 +16,7 @@ class ServerService {
     private init() {}
     
     var list = [Model]()
+    var extlist = [Model]()
     var models: [Model] {
         if let url = URL(string: urlModelSource) {
             if let data = try? Data(contentsOf: url) {
@@ -49,12 +51,33 @@ class ServerService {
                     DispatchQueue.main.async {
                         completion(self.list)
                     }
-                    print(self.list)
+                    //print(self.list)
                 } catch {
                     print("Error")
                 }
             }
         })
         task.resume()
+    }
+    
+    func getModels(completion: @escaping (_ listof: [Model]) -> Void) {
+        let provide = MoyaProvider<Network>()
+        provide.request(.models,completion: { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let extlist = try response.map(Models.self).body
+                    //print(extlist)
+                    DispatchQueue.main.async {
+                        completion(extlist)
+                    }
+                }
+                catch {
+                    print("error")
+                }
+            case .failure(let error):
+                print(error.errorDescription ?? "Unknown error")
+            }
+        })
     }
 }

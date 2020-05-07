@@ -17,9 +17,13 @@ class CollectionInteractor: BaseInteractor {
 // MARK: - CollectionInteractorInputProtocol
 extension CollectionInteractor: CollectionInteractorInputProtocol {
     func retrieveModels() {
-        serviceServer.loadModels() { listof in
+        serviceServer.getModels() { listof in
             self.presenter?.didRetrieveModels(listof)
         }
+        
+        /*serviceServer.loadModels() { listof in
+            self.presenter?.didRetrieveModels(listof)
+        }*/
         
         presenter?.didRetrieveModels(serviceServer.list)
     }

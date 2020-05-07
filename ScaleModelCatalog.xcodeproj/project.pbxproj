@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2246FEBC242258510009F8EC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEBB242258510009F8EC /* Model.swift */; };
 		2246FEC12423B21F0009F8EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEC02423B21F0009F8EC /* DetailViewController.swift */; };
 		2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270F72D2429064800F1F730 /* ImageViewController.swift */; };
+		22718EEE246441B6006312A4 /* MoyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22718EED246441B6006312A4 /* MoyaService.swift */; };
 		228580662456EF840075EC08 /* ImageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580652456EF840075EC08 /* ImageAssembly.swift */; };
 		228580682456F0A30075EC08 /* ImageInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580672456F0A30075EC08 /* ImageInteractorInputProtocol.swift */; };
 		2285806A2456F0B10075EC08 /* ImageInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228580692456F0B10075EC08 /* ImageInteractorOutputProtocol.swift */; };
@@ -78,12 +79,15 @@
 		22F09B33244D897000440E6A /* DetailViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B32244D897000440E6A /* DetailViewInputProtocol.swift */; };
 		22F09B35244D8F4400440E6A /* DetailRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B34244D8F4400440E6A /* DetailRouterOutputProtocol.swift */; };
 		22F09B37244D8F5A00440E6A /* DetailRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B36244D8F5A00440E6A /* DetailRouterInputProtocol.swift */; };
+		387188C2C60E525A94EDA869 /* Pods_ScaleModelCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDE32FEC47308C760A2A28 /* Pods_ScaleModelCatalog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CF502BA672542AC711C7651 /* Pods-ScaleModelCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaleModelCatalog.debug.xcconfig"; path = "Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		2246FEBB242258510009F8EC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2246FEC02423B21F0009F8EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2270F72D2429064800F1F730 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		22718EED246441B6006312A4 /* MoyaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaService.swift; sourceTree = "<group>"; };
 		228580652456EF840075EC08 /* ImageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssembly.swift; sourceTree = "<group>"; };
 		228580672456F0A30075EC08 /* ImageInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		228580692456F0B10075EC08 /* ImageInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorOutputProtocol.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		22F09B32244D897000440E6A /* DetailViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewInputProtocol.swift; sourceTree = "<group>"; };
 		22F09B34244D8F4400440E6A /* DetailRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterOutputProtocol.swift; sourceTree = "<group>"; };
 		22F09B36244D8F5A00440E6A /* DetailRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterInputProtocol.swift; sourceTree = "<group>"; };
+		349CF61C67B4385DF9206135 /* Pods-ScaleModelCatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaleModelCatalog.release.xcconfig"; path = "Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog.release.xcconfig"; sourceTree = "<group>"; };
+		3EDDE32FEC47308C760A2A28 /* Pods_ScaleModelCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaleModelCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,12 +167,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387188C2C60E525A94EDA869 /* Pods_ScaleModelCatalog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A8CDFC1DCCE3A6C654B878E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CF502BA672542AC711C7651 /* Pods-ScaleModelCatalog.debug.xcconfig */,
+				349CF61C67B4385DF9206135 /* Pods-ScaleModelCatalog.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		228580642456EF5F0075EC08 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				229E1CD52420EF20000F3957 /* ScaleModelCatalog */,
+				0A8CDFC1DCCE3A6C654B878E /* Pods */,
+				E02AAD010D29E02651A00C9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -369,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				22D0023E2440615E007A13C4 /* ServerService.swift */,
+				22718EED246441B6006312A4 /* MoyaService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -503,6 +522,14 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		E02AAD010D29E02651A00C9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EDDE32FEC47308C760A2A28 /* Pods_ScaleModelCatalog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,9 +537,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 229E1CE72420EF27000F3957 /* Build configuration list for PBXNativeTarget "ScaleModelCatalog" */;
 			buildPhases = (
+				6660524FD1B5ED672B56A4CA /* [CP] Check Pods Manifest.lock */,
 				229E1CCF2420EF20000F3957 /* Sources */,
 				229E1CD02420EF20000F3957 /* Frameworks */,
 				229E1CD12420EF20000F3957 /* Resources */,
+				F64776D79BC67A0B785A0813 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,6 +602,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6660524FD1B5ED672B56A4CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScaleModelCatalog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F64776D79BC67A0B785A0813 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		229E1CCF2420EF20000F3957 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -590,6 +661,7 @@
 				228580702456F21E0075EC08 /* ImageViewInputProtocol.swift in Sources */,
 				22D0029224446E84007A13C4 /* ImageInteractor.swift in Sources */,
 				228580782456F3E00075EC08 /* ImageRouter.swift in Sources */,
+				22718EEE246441B6006312A4 /* MoyaService.swift in Sources */,
 				22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */,
 				22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */,
 				2285807D2457029B0075EC08 /* TableInteractorInputProtocol.swift in Sources */,
@@ -775,6 +847,7 @@
 		};
 		229E1CE82420EF27000F3957 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CF502BA672542AC711C7651 /* Pods-ScaleModelCatalog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -793,6 +866,7 @@
 		};
 		229E1CE92420EF27000F3957 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 349CF61C67B4385DF9206135 /* Pods-ScaleModelCatalog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
