@@ -46,7 +46,10 @@ extension DetailViewController: DetailViewInputProtocol {
     func loadInterface() {
         title = model?.name
         navigationItem.largeTitleDisplayMode = .never
-        modelImage.image = model?.loadImage()
+        //modelImage.image = model?.loadImage()
+        model?.getModels{ image in
+            self.modelImage.image = image
+        }
         modelTextSpec.text = model?.spec
     }
 }

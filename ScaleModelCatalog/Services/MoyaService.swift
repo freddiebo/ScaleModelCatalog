@@ -10,11 +10,15 @@ import Moya
 
 public enum Network {
     case models
+    case image(String)
 }
 
 extension Network: TargetType {
     public var baseURL: URL {
-        return URL(string: "http://www.mocky.io/v2/5e9823c23500005200c47ecb")!
+        switch self {
+        case .models: return URL(string: "http://www.mocky.io/v2/5e9823c23500005200c47ecb")!
+        case .image(let path): return URL(string: path)!
+        }
     }
     
     public var path: String {

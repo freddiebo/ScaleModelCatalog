@@ -37,9 +37,12 @@ class CollectionViewController: UICollectionViewController {
         let model = modelList[indexPath.row]
         
         cell.modelName.text = model.name
-        model.load() { image in
+        model.getModels{ image in
             cell.modelImage.image = image
         }
+        /*model.load() { image in
+            cell.modelImage.image = image
+        }*/
         //cell.modelImage.image = model.loadImage()
         
         return cell

@@ -8,6 +8,8 @@
 //
 
 import UIKit
+import Moya
+
 struct Model:Codable {
 //class Model: Codable {
     let id: String
@@ -57,5 +59,24 @@ struct Model:Codable {
             }
         })
         task.resume()
+    }
+    
+    func getModels(completion: @escaping (_ image: UIImage?) -> Void) {
+        var loadedImage = UIImage(named: "NoImage.png")
+        let provide = MoyaProvider<Network>()
+        provide.request(.image(self.image), completion: { result in
+            switch result {
+            case .success(let response):
+                let data = response.data
+                loadedImage = UIImage(data: data)
+            case .failure(let error):
+                let nameImage = self.id + ".jpg"
+                loadedImage = UIImage(named: nameImage)
+                print(error.errorDescription ?? "Unknown error")
+            }
+            DispatchQueue.main.async {
+                completion(loadedImage)
+            }
+        })
     }
 }
