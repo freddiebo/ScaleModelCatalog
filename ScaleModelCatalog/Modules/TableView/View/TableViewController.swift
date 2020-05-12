@@ -14,6 +14,7 @@ class TableViewController: UITableViewController {
     let cellReuseIdentifier = "cell"    
     var GroupManufacture = [String: [Model]]()
     var listOfManufacture = [String] ()
+    var rowsInSections = [Int:Int] ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.dataSource = self
+        tableView.sectionHeaderHeight = 40
+        tableView.sectionFooterHeight = 0
         presenter?.viewDidLoad()
         //parseToGroup()
     }
@@ -30,31 +33,30 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return GroupManufacture.keys.count
+        return rowsInSections.count//GroupManufacture.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let key = listOfManufacture[section]
+        /*let key = listOfManufacture[section]
         if let value = GroupManufacture[key] {
            return value.count
+        }*/
+        if let value = rowsInSections[section] {
+            return value == 0 ? 1 : value
         }
         return 1
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-
         let key = listOfManufacture[indexPath.section]
         if let value = GroupManufacture[key] {
             cell.textLabel?.text = value[indexPath.row].name
         }
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return listOfManufacture[section]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,6 +65,51 @@ class TableViewController: UITableViewController {
             presenter?.detailViewShow(model: value[indexPath.row], from: self)
         }
         //presenter?.detailViewShow(model: GroupManufacture[listOfManufacture[indexPath.section]], from: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionHeaderView = UIView()
+        sectionHeaderView.tag = section
+        
+        let tap = UITapGestureRecognizer(target: self, action:#selector(sectionTap(_:)))
+        sectionHeaderView.addGestureRecognizer(tap)
+        
+        let labelManufacture = UILabel()
+        labelManufacture.frame = CGRect(x: 10, y: 10, width: tableView.frame.width, height: 20)
+        labelManufacture.text = listOfManufacture[section]
+        sectionHeaderView.addSubview(labelManufacture)
+        
+        return sectionHeaderView
+    }
+    
+    @objc func sectionTap(_ sender:UITapGestureRecognizer) {
+        let numberSection = sender.view!.tag
+        var numberOfRows = rowsInSections[numberSection]
+        
+        if numberOfRows == 0 {
+            let key = listOfManufacture[numberSection]
+            if let value = GroupManufacture[key] {
+               numberOfRows = value.count
+            }
+        } else {
+            numberOfRows = 0
+        }
+        rowsInSections[numberSection] = numberOfRows
+        tableView.reloadSections([numberSection], with: .automatic)
+    }
+    
+    func getRowsToSection(){
+        for numberSection in 0 ..< listOfManufacture.count {
+            let key = listOfManufacture[numberSection]
+            if let value = GroupManufacture[key] {
+                rowsInSections[numberSection] = value.count
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if rowsInSections[indexPath.section] == 0 { return 0 }
+        return 44.0
     }
 
 }
@@ -73,6 +120,7 @@ extension TableViewController: TableViewInputProtocol {
         self.models = models
         self.GroupManufacture = groupedModels
         self.listOfManufacture = group
+        getRowsToSection()
         tableView.reloadData()
     }
 }

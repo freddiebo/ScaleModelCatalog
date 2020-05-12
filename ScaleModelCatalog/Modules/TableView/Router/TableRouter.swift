@@ -17,7 +17,7 @@ extension TableRouter: TableRouterInputProtocol {
     func presentDetailView(for model: Model, from view: TableViewInputProtocol) {
         let detailView = DetailAssembly.createDetailViewModule(for: model)
         //DetailRouter.createDetailViewModule(for: model)
-        if let sourceView = view as? UICollectionViewController {
+        if let sourceView = view as? UITableViewController {
             sourceView.navigationController?.pushViewController(detailView, animated: true)
         }
     }
