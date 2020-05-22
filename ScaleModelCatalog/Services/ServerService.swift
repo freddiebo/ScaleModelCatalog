@@ -15,8 +15,10 @@ class ServerService {
     
     private init() {}
     
+    var pathPages = ""
     var list = [Model]()
     var extlist = [Model]()
+    var pagesModel = [Model]()
     var models: [Model] {
         if let url = URL(string: urlModelSource) {
             if let data = try? Data(contentsOf: url) {
@@ -73,7 +75,28 @@ class ServerService {
                     }
                 }
                 catch {
-                    print("error")
+                    print("this error")
+                }
+            case .failure(let error):
+                print(error.errorDescription ?? "Unknown error")
+            }
+        })
+    }
+    
+    func getPagesModel(completion: @escaping (_ models: [Model]) -> Void) {
+        print("load \(pathPages)")
+        let provide = MoyaProvider<Network>()
+        provide.request(.modelPages(self.pathPages),completion: { result in
+            switch result {
+            case .success(let response):
+                do {
+                    self.pagesModel.append(contentsOf: try response.map([Model].self))
+                    DispatchQueue.main.async {
+                        completion(self.pagesModel)
+                    }
+                }
+                catch {
+                    print("this error")
                 }
             case .failure(let error):
                 print(error.errorDescription ?? "Unknown error")

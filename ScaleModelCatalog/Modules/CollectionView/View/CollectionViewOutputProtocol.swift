@@ -10,5 +10,6 @@ import UIKit
 
 protocol CollectionViewOutputProtocol: class {
     func viewDidLoad()
+    func pageViewDidLoad(with page: Int, where count: Int)
     func detailViewShow(model: Model, from view: CollectionViewInputProtocol)
 }

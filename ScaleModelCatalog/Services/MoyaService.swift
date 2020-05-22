@@ -9,6 +9,7 @@
 import Moya
 
 public enum Network {
+    case modelPages(String)
     case models
     case image(String)
 }
@@ -16,6 +17,8 @@ public enum Network {
 extension Network: TargetType {
     public var baseURL: URL {
         switch self {
+        //case .modelsPage: return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/Model?page=1&limit=3")!
+        case .modelPages(let path): return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/Model\(path)")!
         case .models: return URL(string: "http://www.mocky.io/v2/5e9823c23500005200c47ecb")!
         case .image(let path): return URL(string: path)!
         }

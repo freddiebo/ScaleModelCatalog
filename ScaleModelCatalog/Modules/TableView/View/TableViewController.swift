@@ -46,10 +46,8 @@ class TableViewController: UITableViewController {
             return value == 0 ? 1 : value
         }
         return 1
-        
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         let key = listOfManufacture[indexPath.section]
@@ -108,10 +106,8 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if rowsInSections[indexPath.section] == 0 { return 0 }
-        return 44.0
+        return rowsInSections[indexPath.section] == 0 ? 0 : 44.0
     }
-
 }
 
 // MARK: - TableViewInputProtocol
