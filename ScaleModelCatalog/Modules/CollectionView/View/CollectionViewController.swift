@@ -27,7 +27,7 @@ class CollectionViewController: UICollectionViewController {
         print(countPage)
         //presenter.viewDidLoad()
         presenter.pageViewDidLoad(with: 1, where: countPage*9)
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddModel))
+
 
         // Register cell classes
         let nibCell = UINib(nibName: "ModelViewCell", bundle: nil)
@@ -42,18 +42,12 @@ class CollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
             fatalError("")
         }
-        
         let model = modelList[indexPath.row]
         
         cell.modelName.text = model.name
-        model.getModels{ image in
+        model.getModels { image in
             cell.modelImage.image = image
         }
-        /*model.load() { image in
-            cell.modelImage.image = image
-        }*/
-        //cell.modelImage.image = model.loadImage()
-        
         return cell
     }
     
@@ -64,12 +58,6 @@ class CollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    /*@objc func AddModel() {
-        let text = "Test spec more. "
-        modelList.append(Model(id:"", name: "New model", spec: text, image: "Car.jpg",manufacturer: "None"))
-        collectionView.reloadData()
-    }*/
 }
 
 // MARK: - UICollectionViewDataSourcePrefetching
@@ -84,14 +72,7 @@ extension CollectionViewController: UICollectionViewDataSourcePrefetching {
             lastCell = indexPath!.row
             print(indexPath!.count/9)
             countPage += 1
-            //while bo {
-                //bo = false
-                presenter.pageViewDidLoad(with: countPage, where: 9)
-                //modelList.append(modelList[0])
-                //let newIndexPath = IndexPath(row: indexPath!.row, section: indexPath!.section)
-                //collectionView.insertItems(at: [newIndexPath])
-                //collectionView.reloadItems(at: [newIndexPath])
-            //}
+            presenter.pageViewDidLoad(with: countPage, where: 9)
         }
       }
     
@@ -110,8 +91,6 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = collectionView.visibleSize.width
         let width = Int(screenSize)/countOnPage - 10
-        //print("count width \(round(screenSize/width))")
-        //print("count height \(round(collectionView.frame.height/150))")
         return CGSize.init(width: width, height: 150)
     }
 }
@@ -120,12 +99,7 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - CollectionViewInputProtocol
 extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface(with models: [Model]) {
-        if modelList.count == 0 {
-            modelList = models
-            collectionView.reloadData()
-        } else {
-            modelList = models
-            insertCellModel()
-        }
+        modelList = models
+        collectionView.reloadData()
     }
 }

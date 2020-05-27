@@ -10,22 +10,14 @@
 import UIKit
 import Moya
 
-struct Model:Codable {
-//class Model: Codable {
+struct Model: Codable {
     let id: String
     let name: String
     let spec: String
     let image: String
     let manufacturer: String
-    /*init(id: String, name:String,spec:String,image:String,manufacturer: String) {
-        self.id = id
-        self.name = name
-        self.spec = spec
-        self.image = image
-        self.manufacturer = manufacturer
-    }*/
     
-    func loadImage() -> UIImage? {
+    /*func loadImage() -> UIImage? {
         var loadedImage = UIImage(named: "NoImage.png")
         if let url = URL(string:self.image) {
             if let data = try? Data(contentsOf: url) {
@@ -59,24 +51,32 @@ struct Model:Codable {
             }
         })
         task.resume()
-    }
+    }*/
     
     func getModels(completion: @escaping (_ image: UIImage?) -> Void) {
+        let cache = NSCache<NSString,UIImage>()
         var loadedImage = UIImage(named: "NoImage.png")
         let provide = MoyaProvider<Network>()
-        provide.request(.image(self.image), completion: { result in
-            switch result {
-            case .success(let response):
-                let data = response.data
-                loadedImage = UIImage(data: data)
-            case .failure(let error):
-                let nameImage = self.id + ".jpg"
-                loadedImage = UIImage(named: nameImage)
-                print(error.errorDescription ?? "Unknown error")
-            }
-            DispatchQueue.main.async {
-                completion(loadedImage)
-            }
-        })
+        if let cachedVersion = cache.object(forKey: NSString(string: id)) {
+            loadedImage = cachedVersion
+            completion(loadedImage)
+        } else {
+            provide.request(.image(self.image), completion: { result in
+                switch result {
+                case .success(let response):
+                    let data = response.data
+                    loadedImage = UIImage(data: data)
+                    cache.setObject(loadedImage!, forKey: NSString(string: self.id))
+                case .failure(let error):
+                    let nameImage = self.id + ".jpg"
+                    loadedImage = UIImage(named: nameImage)
+                    cache.setObject(loadedImage!, forKey: NSString(string: self.id))
+                    print(error.errorDescription ?? "Unknown error")
+                }
+                DispatchQueue.main.async {
+                    completion(loadedImage)
+                }
+            })
+        }
     }
 }
