@@ -15,8 +15,9 @@ class TableInteractor: BaseInteractor {
 
 // MARK: - TableInteractorInputProtocol
 extension TableInteractor: TableInteractorInputProtocol {
-    func retrieveModels() {
-        serviceServer.loadModels() { listof in
+    func retrieveSortModels() {
+        serviceServer.pathPages = "?sortBy=manufacturer&order=asc"
+        serviceServer.getSortModels() { listof in
             self.presenter?.didRetrieveModels(listof)
         }
     }

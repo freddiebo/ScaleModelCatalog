@@ -17,8 +17,8 @@ public enum Network {
 extension Network: TargetType {
     public var baseURL: URL {
         switch self {
-        //case .modelPages(let path): return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/Model\(path)")!
-        case .modelPages(let path): return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/ModelsAll\(path)")!
+        case .modelPages(let path): return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/Model\(path)")!
+        //case .modelPages(let path): return URL(string: "https://5ebeb77bec800c0016043dfc.mockapi.io/ModelsAll\(path)")!
         case .models: return URL(string: "http://www.mocky.io/v2/5e9823c23500005200c47ecb")!
         case .image(let path): return URL(string: path)!
         }

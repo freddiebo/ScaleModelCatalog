@@ -12,5 +12,5 @@ protocol TableInteractorInputProtocol: class {
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
-    func retrieveModels()
+    func retrieveSortModels()
 }

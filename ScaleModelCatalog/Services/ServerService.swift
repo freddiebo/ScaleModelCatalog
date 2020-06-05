@@ -16,24 +16,16 @@ class ServerService {
     private init() {}
     
     var pathPages = ""
-    var list = [Model]()
-    var extlist = [Model]()
     var pagesModel = [Model]()
+    let cache = NSCache<NSString,UIImage>()
     
-    var urlModelSource: String {
-        return "http://www.mocky.io/v2/5e9823c23500005200c47ecb"
-        //"http://www.mocky.io/v2/5e8747f03100000aff81a520"
-        //"http://www.mocky.io/v2/5e8746733100008af581a50e"
-    }
-    
-    func getModels(completion: @escaping (_ listof: [Model]) -> Void) {
+    func getSortModels(completion: @escaping (_ listof: [Model]) -> Void) {
         let provide = MoyaProvider<Network>()
-        provide.request(.models,completion: { result in
+        provide.request(.modelPages(self.pathPages),completion: { result in
             switch result {
             case .success(let response):
                 do {
-                    let extlist = try response.map(Models.self).body
-                    //print(extlist)
+                    let extlist = try response.map([Model].self)
                     DispatchQueue.main.async {
                         completion(extlist)
                     }
@@ -48,7 +40,6 @@ class ServerService {
     }
     
     func getPagesModel(completion: @escaping (_ models: [Model]) -> Void) {
-        print("load \(pathPages)")
         let provide = MoyaProvider<Network>()
         provide.request(.modelPages(self.pathPages),completion: { result in
             switch result {
@@ -66,5 +57,31 @@ class ServerService {
                 print(error.errorDescription ?? "Unknown error")
             }
         })
+    }
+    
+    func getImageModel(with id: String, from url: String, completion: @escaping (_ image: UIImage?) -> Void) {
+        var loadedImage = UIImage(named: "NoImage.png")
+        let provide = MoyaProvider<Network>()
+        if let cachedVersion = cache.object(forKey: NSString(string: id)) {
+            loadedImage = cachedVersion
+            completion(loadedImage)
+        } else {
+            provide.request(.image(url), completion: { result in
+                switch result {
+                case .success(let response):
+                    let data = response.data
+                    loadedImage = UIImage(data: data)
+                    self.cache.setObject(loadedImage!, forKey: NSString(string: id))
+                case .failure(let error):
+                    let nameImage = id + ".jpg"
+                    loadedImage = UIImage(named: nameImage)
+                    self.cache.setObject(loadedImage!, forKey: NSString(string: id))
+                    print(error.errorDescription ?? "Unknown error")
+                }
+                DispatchQueue.main.async {
+                    completion(loadedImage)
+                }
+            })
+        }
     }
 }

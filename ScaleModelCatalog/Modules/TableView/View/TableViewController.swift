@@ -26,7 +26,6 @@ class TableViewController: UITableViewController {
         tableView.sectionHeaderHeight = 40
         tableView.sectionFooterHeight = 0
         presenter?.viewDidLoad()
-        //parseToGroup()
     }
     
     // MARK: - Table view data source

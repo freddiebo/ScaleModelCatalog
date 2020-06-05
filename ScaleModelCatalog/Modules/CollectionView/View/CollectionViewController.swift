@@ -22,11 +22,9 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
-        countPage = Int((collectionView.frame.height/150 + 1)/3) + 1
-        
-        print(countPage)
+        countPage = Int((collectionView.frame.height/150 + 1)) + 1
         //presenter.viewDidLoad()
-        presenter.pageViewDidLoad(with: 1, where: countPage*9)
+        presenter.pageViewDidLoad(with: 1, where: countPage * countOnPage)
 
 
         // Register cell classes
@@ -45,9 +43,10 @@ class CollectionViewController: UICollectionViewController {
         let model = modelList[indexPath.row]
         
         cell.modelName.text = model.name
-        model.getModels { image in
+        let service = ServerService.shared
+        service.getImageModel(with: model.id, from: model.image, completion: { image in
             cell.modelImage.image = image
-        }
+        })
         return cell
     }
     
@@ -63,26 +62,16 @@ class CollectionViewController: UICollectionViewController {
 // MARK: - UICollectionViewDataSourcePrefetching
 extension CollectionViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print("Vis \(indexPaths)")
         let indexPath = indexPaths.last
-        print(indexPath!.section)
-        print(indexPath!.row)
-        print(lastCell)
         if lastCell < indexPath!.row {
             lastCell = indexPath!.row
-            print(indexPath!.count/9)
             countPage += 1
-            presenter.pageViewDidLoad(with: countPage, where: 9)
+            presenter.pageViewDidLoad(with: countPage, where: countOnPage)
         }
       }
     
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        print("cancel \(indexPaths)")
-    }
-    
-    func insertCellModel() {
-        let newIndexPath = IndexPath(row: lastCell, section: 0)
-        collectionView.insertItems(at: [newIndexPath,newIndexPath,newIndexPath])
+        //print("cancel \(indexPaths)")
     }
     
 }

@@ -31,7 +31,7 @@ class TablePresenter: BasePresenter {
 // MARK: - TableViewOutputProtocol
 extension TablePresenter: TableViewOutputProtocol {
     func viewDidLoad() {
-        interactor?.retrieveModels()
+        interactor?.retrieveSortModels()
     }
     func detailViewShow(model: Model, from view: TableViewInputProtocol) {
         router?.presentDetailView(for: model, from: view)
