@@ -19,6 +19,7 @@ class CollectionViewController: UICollectionViewController {
     var presenter: CollectionViewOutputProtocol!
  
     override func viewDidLoad() {
+
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self

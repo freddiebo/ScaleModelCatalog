@@ -17,6 +17,7 @@ class ServerService {
     
     var pathPages = ""
     var pagesModel = [Model]()
+    var pagesSortModel = [Model]()
     let cache = NSCache<NSString,UIImage>()
     
     func getSortModels(completion: @escaping (_ listof: [Model]) -> Void) {

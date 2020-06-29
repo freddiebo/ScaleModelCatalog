@@ -15,17 +15,24 @@ class TableViewController: UITableViewController {
     var GroupManufacture = [String: [Model]]()
     var listOfManufacture = [String] ()
     var rowsInSections = [Int:Int] ()
+    var lastCell = 0
+    var countOnPage = 0
+    var countPage = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Group by Manufacture"
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView.sectionHeaderHeight = 40
         tableView.sectionFooterHeight = 0
-        presenter?.viewDidLoad()
+        countOnPage = Int(tableView.frame.height/45)
+        //presenter?.viewDidLoad()
+        presenter.pageViewDidLoad(with: countPage, where: countOnPage)
     }
     
     // MARK: - Table view data source
@@ -37,10 +44,6 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        /*let key = listOfManufacture[section]
-        if let value = GroupManufacture[key] {
-           return value.count
-        }*/
         if let value = rowsInSections[section] {
             return value == 0 ? 1 : value
         }
@@ -104,15 +107,26 @@ class TableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    /*override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowsInSections[indexPath.section] == 0 ? 0 : 44.0
+    }*/
+    
+}
+
+// MARK: - UITableViewDataSourcePrefetching
+extension TableViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if models.count >= countPage*countOnPage {
+            countPage += 1
+            presenter.pageViewDidLoad(with: countPage, where: countOnPage)
+        }
     }
 }
 
 // MARK: - TableViewInputProtocol
 extension TableViewController: TableViewInputProtocol {
     func reloadInterface(with models:[Model], groupedModels: [String : [Model]], by group: [String])  {
-        self.models = models
+        self.models.append(contentsOf: models)
         self.GroupManufacture = groupedModels
         self.listOfManufacture = group
         getRowsToSection()

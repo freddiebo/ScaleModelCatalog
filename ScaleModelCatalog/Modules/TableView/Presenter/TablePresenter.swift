@@ -30,6 +30,9 @@ class TablePresenter: BasePresenter {
 
 // MARK: - TableViewOutputProtocol
 extension TablePresenter: TableViewOutputProtocol {
+    func pageViewDidLoad(with page: Int, where count: Int) {
+        interactor?.retrievePagesModels(with: page, where: count)
+    }
     func viewDidLoad() {
         interactor?.retrieveSortModels()
     }
