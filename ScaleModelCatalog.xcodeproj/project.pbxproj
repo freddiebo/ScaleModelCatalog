@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222D327F24F924690032BFF1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D327D24F924690032BFF1 /* AuthViewController.swift */; };
+		222D328024F924690032BFF1 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222D327E24F924690032BFF1 /* AuthViewController.xib */; };
+		222D328224F934C80032BFF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 222D328124F934C80032BFF1 /* GoogleService-Info.plist */; };
+		222D328424F936380032BFF1 /* AuthViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328324F936380032BFF1 /* AuthViewOutputProtocol.swift */; };
+		222D328624F9364D0032BFF1 /* AuthViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328524F9364D0032BFF1 /* AuthViewInputProtocol.swift */; };
+		222D328824F938760032BFF1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328724F938760032BFF1 /* AuthPresenter.swift */; };
+		222D328A24F939120032BFF1 /* AuthModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328924F939120032BFF1 /* AuthModuleInputProtocol.swift */; };
+		222D328C24F939280032BFF1 /* AuthModuleOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328B24F939280032BFF1 /* AuthModuleOutputProtocol.swift */; };
+		222D328E24F93F860032BFF1 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328D24F93F860032BFF1 /* AuthRouter.swift */; };
+		222D329024F93FC90032BFF1 /* AuthRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D328F24F93FC90032BFF1 /* AuthRouterInputProtocol.swift */; };
+		222D329224F93FE70032BFF1 /* AuthRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D329124F93FE70032BFF1 /* AuthRouterOutputProtocol.swift */; };
+		222D329424F941330032BFF1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D329324F941330032BFF1 /* AuthInteractor.swift */; };
+		222D329624F9440D0032BFF1 /* AuthInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D329524F9440D0032BFF1 /* AuthInteractorInputProtocol.swift */; };
+		222D329824F944710032BFF1 /* AuthInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D329724F944710032BFF1 /* AuthInteractorOutputProtocol.swift */; };
+		222D329A24F948AA0032BFF1 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D329924F948AA0032BFF1 /* AuthAssembly.swift */; };
 		2246FEBC242258510009F8EC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEBB242258510009F8EC /* Model.swift */; };
 		2246FEC12423B21F0009F8EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246FEC02423B21F0009F8EC /* DetailViewController.swift */; };
 		2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270F72D2429064800F1F730 /* ImageViewController.swift */; };
@@ -47,6 +62,7 @@
 		229E1CD92420EF20000F3957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1CD82420EF20000F3957 /* SceneDelegate.swift */; };
 		229E1CE02420EF27000F3957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229E1CDF2420EF27000F3957 /* Assets.xcassets */; };
 		229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229E1CE12420EF27000F3957 /* LaunchScreen.storyboard */; };
+		22A16FA825011744008AD069 /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A16FA725011744008AD069 /* SignUpTextField.swift */; };
 		22B83D712434C7B50001FFB5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D702434C7B50001FFB5 /* DetailViewController.xib */; };
 		22B83D772434CFF90001FFB5 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D762434CFF90001FFB5 /* ImageViewController.xib */; };
 		22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D822435E42E0001FFB5 /* CollectionViewController.swift */; };
@@ -71,6 +87,21 @@
 		22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029E2444874B007A13C4 /* TablePresenter.swift */; };
 		22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A3244487C0007A13C4 /* TableInteractor.swift */; };
 		22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */ = {isa = PBXBuildFile; fileRef = 22D002B52444A04E007A13C4 /* ScaleCar.json */; };
+		22E36D4324FFBCBC00733317 /* AccountBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D4224FFBCBC00733317 /* AccountBarButton.swift */; };
+		22E36D6024FFD6B600733317 /* SignUpViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */; };
+		22E36D6124FFD6B600733317 /* SignUpViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */; };
+		22E36D6424FFD6E500733317 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D6224FFD6E500733317 /* SignUpViewController.swift */; };
+		22E36D6524FFD6E500733317 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E36D6324FFD6E500733317 /* SignUpViewController.xib */; };
+		22E36D7124FFD8CB00733317 /* SignUpModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D6E24FFD8C800733317 /* SignUpModuleInputProtocol.swift */; };
+		22E36D7224FFD8CB00733317 /* SignUpModuleOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D6F24FFD8C900733317 /* SignUpModuleOutputProtocol.swift */; };
+		22E36D7324FFD8CB00733317 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D7024FFD8CB00733317 /* SignUpPresenter.swift */; };
+		22E36D7A24FFD92600733317 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D7724FFD92600733317 /* SignUpRouter.swift */; };
+		22E36D7B24FFD92600733317 /* SignUpRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D7824FFD92600733317 /* SignUpRouterInputProtocol.swift */; };
+		22E36D7C24FFD92600733317 /* SignUpRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D7924FFD92600733317 /* SignUpRouterOutputProtocol.swift */; };
+		22E36D8024FFD95A00733317 /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D7F24FFD95A00733317 /* SignUpAssembly.swift */; };
+		22E36D8424FFD97700733317 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D8124FFD97300733317 /* SignUpInteractor.swift */; };
+		22E36D8524FFD97700733317 /* SignUpInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D8224FFD97500733317 /* SignUpInteractorInputProtocol.swift */; };
+		22E36D8624FFD97700733317 /* SignUpInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D8324FFD97700733317 /* SignUpInteractorOutputProtocol.swift */; };
 		22F09B29244D864B00440E6A /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B28244D864B00440E6A /* DetailAssembly.swift */; };
 		22F09B2B244D870600440E6A /* DetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B2A244D870600440E6A /* DetailInteractorInputProtocol.swift */; };
 		22F09B2D244D88AF00440E6A /* DetailModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B2C244D88AF00440E6A /* DetailModuleInputProtocol.swift */; };
@@ -84,6 +115,21 @@
 
 /* Begin PBXFileReference section */
 		1CF502BA672542AC711C7651 /* Pods-ScaleModelCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaleModelCatalog.debug.xcconfig"; path = "Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog.debug.xcconfig"; sourceTree = "<group>"; };
+		222D327D24F924690032BFF1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		222D327E24F924690032BFF1 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		222D328124F934C80032BFF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		222D328324F936380032BFF1 /* AuthViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewOutputProtocol.swift; sourceTree = "<group>"; };
+		222D328524F9364D0032BFF1 /* AuthViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewInputProtocol.swift; sourceTree = "<group>"; };
+		222D328724F938760032BFF1 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		222D328924F939120032BFF1 /* AuthModuleInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleInputProtocol.swift; sourceTree = "<group>"; };
+		222D328B24F939280032BFF1 /* AuthModuleOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleOutputProtocol.swift; sourceTree = "<group>"; };
+		222D328D24F93F860032BFF1 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		222D328F24F93FC90032BFF1 /* AuthRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouterInputProtocol.swift; sourceTree = "<group>"; };
+		222D329124F93FE70032BFF1 /* AuthRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouterOutputProtocol.swift; sourceTree = "<group>"; };
+		222D329324F941330032BFF1 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		222D329524F9440D0032BFF1 /* AuthInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		222D329724F944710032BFF1 /* AuthInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		222D329924F948AA0032BFF1 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		2246FEBB242258510009F8EC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2246FEC02423B21F0009F8EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2270F72D2429064800F1F730 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +172,7 @@
 		229E1CDF2420EF27000F3957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229E1CE22420EF27000F3957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229E1CE42420EF27000F3957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A16FA725011744008AD069 /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
 		22B83D702434C7B50001FFB5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		22B83D762434CFF90001FFB5 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		22B83D822435E42E0001FFB5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +197,21 @@
 		22D0029E2444874B007A13C4 /* TablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenter.swift; sourceTree = "<group>"; };
 		22D002A3244487C0007A13C4 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
 		22D002B52444A04E007A13C4 /* ScaleCar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScaleCar.json; sourceTree = "<group>"; };
+		22E36D4224FFBCBC00733317 /* AccountBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBarButton.swift; sourceTree = "<group>"; };
+		22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewOutputProtocol.swift; sourceTree = "<group>"; };
+		22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewInputProtocol.swift; sourceTree = "<group>"; };
+		22E36D6224FFD6E500733317 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		22E36D6324FFD6E500733317 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		22E36D6E24FFD8C800733317 /* SignUpModuleInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModuleInputProtocol.swift; sourceTree = "<group>"; };
+		22E36D6F24FFD8C900733317 /* SignUpModuleOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModuleOutputProtocol.swift; sourceTree = "<group>"; };
+		22E36D7024FFD8CB00733317 /* SignUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		22E36D7724FFD92600733317 /* SignUpRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		22E36D7824FFD92600733317 /* SignUpRouterInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpRouterInputProtocol.swift; sourceTree = "<group>"; };
+		22E36D7924FFD92600733317 /* SignUpRouterOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpRouterOutputProtocol.swift; sourceTree = "<group>"; };
+		22E36D7F24FFD95A00733317 /* SignUpAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
+		22E36D8124FFD97300733317 /* SignUpInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		22E36D8224FFD97500733317 /* SignUpInteractorInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		22E36D8324FFD97700733317 /* SignUpInteractorOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		22F09B28244D864B00440E6A /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		22F09B2A244D870600440E6A /* DetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		22F09B2C244D88AF00440E6A /* DetailModuleInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModuleInputProtocol.swift; sourceTree = "<group>"; };
@@ -181,6 +243,67 @@
 				349CF61C67B4385DF9206135 /* Pods-ScaleModelCatalog.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		222D327524F915F90032BFF1 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				222D327A24F916460032BFF1 /* Router */,
+				222D327924F916400032BFF1 /* View */,
+				222D327824F916390032BFF1 /* Presenter */,
+				222D327724F9161E0032BFF1 /* Interactor */,
+				222D327624F916120032BFF1 /* Assembly */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		222D327624F916120032BFF1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				222D329924F948AA0032BFF1 /* AuthAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		222D327724F9161E0032BFF1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				222D329324F941330032BFF1 /* AuthInteractor.swift */,
+				222D329524F9440D0032BFF1 /* AuthInteractorInputProtocol.swift */,
+				222D329724F944710032BFF1 /* AuthInteractorOutputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		222D327824F916390032BFF1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				222D328724F938760032BFF1 /* AuthPresenter.swift */,
+				222D328B24F939280032BFF1 /* AuthModuleOutputProtocol.swift */,
+				222D328924F939120032BFF1 /* AuthModuleInputProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		222D327924F916400032BFF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				222D327D24F924690032BFF1 /* AuthViewController.swift */,
+				222D328324F936380032BFF1 /* AuthViewOutputProtocol.swift */,
+				222D328524F9364D0032BFF1 /* AuthViewInputProtocol.swift */,
+				222D327E24F924690032BFF1 /* AuthViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		222D327A24F916460032BFF1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				222D328D24F93F860032BFF1 /* AuthRouter.swift */,
+				222D328F24F93FC90032BFF1 /* AuthRouterInputProtocol.swift */,
+				222D329124F93FE70032BFF1 /* AuthRouterOutputProtocol.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		228580642456EF5F0075EC08 /* Assembly */ = {
@@ -260,6 +383,7 @@
 		229E1CD52420EF20000F3957 /* ScaleModelCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				222D328124F934C80032BFF1 /* GoogleService-Info.plist */,
 				2293CA472449B6B20072F59E /* Base */,
 				22D002B52444A04E007A13C4 /* ScaleCar.json */,
 				22D0023D24405670007A13C4 /* Services */,
@@ -374,11 +498,15 @@
 		22D0023C2440564E007A13C4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				22E36D4424FFD03800733317 /* SignUpView */,
+				222D327524F915F90032BFF1 /* AuthView */,
 				22B83D8F2436259E0001FFB5 /* CollectionView */,
 				22B83D8E243625930001FFB5 /* DetailView */,
 				22B83D8D2436257F0001FFB5 /* ImageView */,
 				2292E21D243B7CF600762704 /* TabBar */,
 				2292E21E243B7D0200762704 /* TableView */,
+				22E36D4224FFBCBC00733317 /* AccountBarButton.swift */,
+				22A16FA725011744008AD069 /* SignUpTextField.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -514,6 +642,67 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		22E36D4424FFD03800733317 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D7D24FFD93F00733317 /* Assembly */,
+				22E36D7E24FFD94100733317 /* Interactor */,
+				22E36D7624FFD92600733317 /* Router */,
+				22E36D6D24FFD8BE00733317 /* Presenter */,
+				22E36D4824FFD05A00733317 /* View */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		22E36D4824FFD05A00733317 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */,
+				22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */,
+				22E36D6224FFD6E500733317 /* SignUpViewController.swift */,
+				22E36D6324FFD6E500733317 /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22E36D6D24FFD8BE00733317 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D6E24FFD8C800733317 /* SignUpModuleInputProtocol.swift */,
+				22E36D6F24FFD8C900733317 /* SignUpModuleOutputProtocol.swift */,
+				22E36D7024FFD8CB00733317 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		22E36D7624FFD92600733317 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D7724FFD92600733317 /* SignUpRouter.swift */,
+				22E36D7824FFD92600733317 /* SignUpRouterInputProtocol.swift */,
+				22E36D7924FFD92600733317 /* SignUpRouterOutputProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		22E36D7D24FFD93F00733317 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D7F24FFD95A00733317 /* SignUpAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		22E36D7E24FFD94100733317 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				22E36D8124FFD97300733317 /* SignUpInteractor.swift */,
+				22E36D8224FFD97500733317 /* SignUpInteractorInputProtocol.swift */,
+				22E36D8324FFD97700733317 /* SignUpInteractorOutputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		22F09B27244D861400440E6A /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,7 +779,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E36D6524FFD6E500733317 /* SignUpViewController.xib in Resources */,
+				222D328024F924690032BFF1 /* AuthViewController.xib in Resources */,
 				22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */,
+				222D328224F934C80032BFF1 /* GoogleService-Info.plist in Resources */,
 				22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */,
 				22B83D712434C7B50001FFB5 /* DetailViewController.xib in Resources */,
 				229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */,
@@ -649,14 +841,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E36D7A24FFD92600733317 /* SignUpRouter.swift in Sources */,
 				22D0029A24448633007A13C4 /* TableRouter.swift in Sources */,
 				2285808B24570A340075EC08 /* TableRouterOutputProtocol.swift in Sources */,
+				22E36D8024FFD95A00733317 /* SignUpAssembly.swift in Sources */,
+				22E36D7124FFD8CB00733317 /* SignUpModuleInputProtocol.swift in Sources */,
 				228580682456F0A30075EC08 /* ImageInteractorInputProtocol.swift in Sources */,
+				222D329224F93FE70032BFF1 /* AuthRouterOutputProtocol.swift in Sources */,
 				22D0027B24426823007A13C4 /* DetailRouter.swift in Sources */,
 				2285806A2456F0B10075EC08 /* ImageInteractorOutputProtocol.swift in Sources */,
+				22E36D6424FFD6E500733317 /* SignUpViewController.swift in Sources */,
+				22E36D4324FFBCBC00733317 /* AccountBarButton.swift in Sources */,
 				2285808924570A2A0075EC08 /* TableRouterInputProtocol.swift in Sources */,
 				2293CA5B2449C41A0072F59E /* CollectionViewOutputProtocol.swift in Sources */,
 				22D0027F2442687F007A13C4 /* DetailPresenter.swift in Sources */,
+				222D328424F936380032BFF1 /* AuthViewOutputProtocol.swift in Sources */,
+				222D329024F93FC90032BFF1 /* AuthRouterInputProtocol.swift in Sources */,
 				22D00281244268E9007A13C4 /* DetailInteractorOutputProtocol.swift in Sources */,
 				228580702456F21E0075EC08 /* ImageViewInputProtocol.swift in Sources */,
 				22D0029224446E84007A13C4 /* ImageInteractor.swift in Sources */,
@@ -666,17 +866,22 @@
 				22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */,
 				2285807D2457029B0075EC08 /* TableInteractorInputProtocol.swift in Sources */,
 				2285806C2456F1890075EC08 /* ImageModuleInputProtocol.swift in Sources */,
+				222D328C24F939280032BFF1 /* AuthModuleOutputProtocol.swift in Sources */,
 				2293CA492449B6C80072F59E /* BaseViewController.swift in Sources */,
 				2293CA532449C1440072F59E /* CollectionInteractorOutputProtocol.swift in Sources */,
 				2293CA552449C2CE0072F59E /* CollectionModuleInputProtocol.swift in Sources */,
 				2293CA512449B7040072F59E /* BaseInteractor.swift in Sources */,
 				2246FEBC242258510009F8EC /* Model.swift in Sources */,
+				222D327F24F924690032BFF1 /* AuthViewController.swift in Sources */,
 				22F09B33244D897000440E6A /* DetailViewInputProtocol.swift in Sources */,
 				22D0022C243F3E8A007A13C4 /* CollectionInteractorInputProtocol.swift in Sources */,
 				2285807B245702300075EC08 /* TableAssembly.swift in Sources */,
 				22D002832442690E007A13C4 /* DetailInteractor.swift in Sources */,
 				229E1CD72420EF20000F3957 /* AppDelegate.swift in Sources */,
 				2293CA4D2449B6DF0072F59E /* BaseRouter.swift in Sources */,
+				22E36D6024FFD6B600733317 /* SignUpViewOutputProtocol.swift in Sources */,
+				22E36D7C24FFD92600733317 /* SignUpRouterOutputProtocol.swift in Sources */,
+				222D329624F9440D0032BFF1 /* AuthInteractorInputProtocol.swift in Sources */,
 				22B83D99243785C70001FFB5 /* TableViewController.swift in Sources */,
 				2293CA5D2449CB3F0072F59E /* CollectionRouterInputProtocol.swift in Sources */,
 				22D0023F2440615E007A13C4 /* ServerService.swift in Sources */,
@@ -684,26 +889,36 @@
 				22858087245707C50075EC08 /* TableViewOutputProtocol.swift in Sources */,
 				22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */,
 				2285807F245702C20075EC08 /* TableInteractorOutputProtocol.swift in Sources */,
+				222D328824F938760032BFF1 /* AuthPresenter.swift in Sources */,
 				228580762456F3550075EC08 /* ImageRouterOutputProtocol.swift in Sources */,
 				22F09B2B244D870600440E6A /* DetailInteractorInputProtocol.swift in Sources */,
 				2285806E2456F1930075EC08 /* ImageModuleOutputProtocol.swift in Sources */,
 				2293CA592449C40A0072F59E /* CollectionViewInputProtocol.swift in Sources */,
+				22E36D7224FFD8CB00733317 /* SignUpModuleOutputProtocol.swift in Sources */,
 				22858083245707210075EC08 /* TableModuleOutputProtocol.swift in Sources */,
 				228580722456F2280075EC08 /* ImageViewOutputProtocol.swift in Sources */,
 				22F09B2D244D88AF00440E6A /* DetailModuleInputProtocol.swift in Sources */,
+				22E36D6124FFD6B600733317 /* SignUpViewInputProtocol.swift in Sources */,
 				22F09B2F244D88DE00440E6A /* DetailModuleOutputProtocol.swift in Sources */,
 				22B83D91243728F30001FFB5 /* TabBarController.swift in Sources */,
+				222D329A24F948AA0032BFF1 /* AuthAssembly.swift in Sources */,
 				22858085245707BB0075EC08 /* TableViewInputProtocol.swift in Sources */,
 				22B83D882435E4780001FFB5 /* ModelViewCell.swift in Sources */,
+				22E36D8624FFD97700733317 /* SignUpInteractorOutputProtocol.swift in Sources */,
 				2293CA4B2449B6D30072F59E /* BaseAssembly.swift in Sources */,
+				22E36D8524FFD97700733317 /* SignUpInteractorInputProtocol.swift in Sources */,
 				22D00235243F6B2C007A13C4 /* CollectionInteractor.swift in Sources */,
 				22CADCC3243205310038BAA7 /* Models.swift in Sources */,
 				22D00231243F5B55007A13C4 /* CollectionPresenter.swift in Sources */,
+				22E36D7324FFD8CB00733317 /* SignUpPresenter.swift in Sources */,
 				22D0028D24446E46007A13C4 /* ImagePresenter.swift in Sources */,
 				22F09B37244D8F5A00440E6A /* DetailRouterInputProtocol.swift in Sources */,
 				2293CA572449C2DE0072F59E /* CollectionModuleOutputProtocol.swift in Sources */,
+				22E36D7B24FFD92600733317 /* SignUpRouterInputProtocol.swift in Sources */,
+				222D328A24F939120032BFF1 /* AuthModuleInputProtocol.swift in Sources */,
 				2270F72E2429064800F1F730 /* ImageViewController.swift in Sources */,
 				2246FEC12423B21F0009F8EC /* DetailViewController.swift in Sources */,
+				222D328624F9364D0032BFF1 /* AuthViewInputProtocol.swift in Sources */,
 				22F09B29244D864B00440E6A /* DetailAssembly.swift in Sources */,
 				228580812457070F0075EC08 /* TableModuleInputProtocol.swift in Sources */,
 				22D002412440CE54007A13C4 /* CollectionRouter.swift in Sources */,
@@ -711,8 +926,13 @@
 				228580662456EF840075EC08 /* ImageAssembly.swift in Sources */,
 				229E1CD92420EF20000F3957 /* SceneDelegate.swift in Sources */,
 				22F09B35244D8F4400440E6A /* DetailRouterOutputProtocol.swift in Sources */,
+				222D329824F944710032BFF1 /* AuthInteractorOutputProtocol.swift in Sources */,
 				2293CA462449B4F90072F59E /* CollectionAssembly.swift in Sources */,
+				22A16FA825011744008AD069 /* SignUpTextField.swift in Sources */,
+				222D329424F941330032BFF1 /* AuthInteractor.swift in Sources */,
 				228580742456F3490075EC08 /* ImageRouterInputProtocol.swift in Sources */,
+				222D328E24F93F860032BFF1 /* AuthRouter.swift in Sources */,
+				22E36D8424FFD97700733317 /* SignUpInteractor.swift in Sources */,
 				2293CA5F2449CB500072F59E /* CollectionRouterOutputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

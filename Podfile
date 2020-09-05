@@ -7,4 +7,7 @@ target 'ScaleModelCatalog' do
 
   # Pods for ScaleModelCatalog
   pod 'Moya', '~> 14.0'
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end
