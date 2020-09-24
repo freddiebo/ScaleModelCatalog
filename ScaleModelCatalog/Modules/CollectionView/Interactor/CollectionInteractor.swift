@@ -16,11 +16,15 @@ class CollectionInteractor: BaseInteractor {
 
 // MARK: - CollectionInteractorInputProtocol
 extension CollectionInteractor: CollectionInteractorInputProtocol {
-    func retrieveModels() {
-        serviceServer.loadModels() { listof in
-            self.presenter?.didRetrieveModels(listof)
+    func retrievePagesModels(with page: Int, where count: Int) {
+        let pathPages = "?page=\(page)&limit=\(count)"
+        serviceServer.pathPages = pathPages
+        serviceServer.getPagesModel() { models in
+            self.presenter?.didRetrieveModels(models)
         }
+    }
+    
+    func retrieveModels() {
         
-        presenter?.didRetrieveModels(serviceServer.list)
     }
 }

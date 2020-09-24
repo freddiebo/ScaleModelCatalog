@@ -11,14 +11,22 @@ import UIKit
 private let reuseIdentifier = "Model"
 
 class CollectionViewController: UICollectionViewController {
-    
+    var bo = true
+    let countOnPage = 3
+    var countPage = 1
+    var lastCell = 0
     var modelList = [Model]()
     var presenter: CollectionViewOutputProtocol!
  
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        presenter.viewDidLoad()
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddModel))
+        collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
+        countPage = Int((collectionView.frame.height/150 + 1)) + 1
+        //presenter.viewDidLoad()
+        presenter.pageViewDidLoad(with: 1, where: countPage * countOnPage)
+
 
         // Register cell classes
         let nibCell = UINib(nibName: "ModelViewCell", bundle: nil)
@@ -33,15 +41,13 @@ class CollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
             fatalError("")
         }
-        
         let model = modelList[indexPath.row]
         
         cell.modelName.text = model.name
-        model.load() { image in
+        let service = ServerService.shared
+        service.getImageModel(with: model.id, from: model.image, completion: { image in
             cell.modelImage.image = image
-        }
-        //cell.modelImage.image = model.loadImage()
-        
+        })
         return cell
     }
     
@@ -52,17 +58,34 @@ class CollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+}
+
+// MARK: - UICollectionViewDataSourcePrefetching
+extension CollectionViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let indexPath = indexPaths.last
+        if lastCell < indexPath!.row {
+            lastCell = indexPath!.row
+            countPage += 1
+            presenter.pageViewDidLoad(with: countPage, where: countOnPage)
+        }
+      }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 200, height: 200)
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        //print("cancel \(indexPaths)")
     }
     
-    /*@objc func AddModel() {
-        let text = "Test spec more. "
-        modelList.append(Model(id:"", name: "New model", spec: text, image: "Car.jpg",manufacturer: "None"))
-        collectionView.reloadData()
-    }*/
 }
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenSize = collectionView.visibleSize.width
+        let width = Int(screenSize)/countOnPage - 10
+        return CGSize.init(width: width, height: 150)
+    }
+}
+
+
 // MARK: - CollectionViewInputProtocol
 extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface(with models: [Model]) {

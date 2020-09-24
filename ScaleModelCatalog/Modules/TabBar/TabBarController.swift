@@ -12,6 +12,10 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(test))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style: .plain, target: self, action: #selector(openAuthView))
+        //navigationItem.rightBarButtonItem = AccountBarButton(image: UIImage(systemName: "person.crop.circle.badge.xmark"))
         let viewCollection = CollectionAssembly.createCollectionViewModule()
             //CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
 
@@ -28,4 +32,8 @@ class TabBarController: UITabBarController {
 
     }
     
+    @objc func openAuthView() {
+        let authView = AuthAssembly.createTableViewModule()
+        navigationController?.pushViewController(authView, animated: true)
+    }
 }

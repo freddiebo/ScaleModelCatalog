@@ -13,6 +13,12 @@ class ModelViewCell: UICollectionViewCell {
     @IBOutlet var modelImage: UIImageView!
     @IBOutlet var modelName: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        modelName.text = nil
+        modelImage.image = nil
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

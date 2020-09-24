@@ -17,6 +17,10 @@ class CollectionPresenter: BasePresenter {
 
 // MARK: - CollectionViewOutputProtocol
 extension CollectionPresenter: CollectionViewOutputProtocol {
+    func pageViewDidLoad(with page: Int, where count: Int) {
+        interactor?.retrievePagesModels(with: page, where: count)
+    }
+    
     func viewDidLoad() {
         interactor?.retrieveModels()
     }
