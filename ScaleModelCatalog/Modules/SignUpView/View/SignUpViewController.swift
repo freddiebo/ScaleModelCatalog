@@ -50,16 +50,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         //create User
         if result == "Success" {
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                if error != nil {
-                    self.showErrorMessage(message: error!.localizedDescription)
+                if let error = error {
+                    self.showErrorMessage(message: error.localizedDescription)
                 }
                 
                 let db = Firestore.firestore()
                 
                 db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
                     
-                    if error != nil {
-                        self.showErrorMessage(message: error!.localizedDescription)
+                    if let error = error {
+                        self.showErrorMessage(message: error.localizedDescription)
                     }
                 }
                 

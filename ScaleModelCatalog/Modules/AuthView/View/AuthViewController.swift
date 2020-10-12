@@ -31,9 +31,8 @@ class AuthViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
-            if error != nil {
-                // Couldn't sign in
-                
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
             else {
                 let db = Firestore.firestore()

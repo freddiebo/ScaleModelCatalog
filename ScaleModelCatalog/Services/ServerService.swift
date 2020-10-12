@@ -71,12 +71,16 @@ class ServerService {
                 switch result {
                 case .success(let response):
                     let data = response.data
-                    loadedImage = UIImage(data: data)
-                    self.cache.setObject(loadedImage!, forKey: NSString(string: id))
+                    if let newImage = UIImage(data: data) {
+                        self.cache.setObject(newImage, forKey: NSString(string: id))
+                        loadedImage = newImage
+                    }
                 case .failure(let error):
                     let nameImage = id + ".jpg"
-                    loadedImage = UIImage(named: nameImage)
-                    self.cache.setObject(loadedImage!, forKey: NSString(string: id))
+                    if let newImage = UIImage(named: nameImage) {
+                        self.cache.setObject(newImage, forKey: NSString(string: id))
+                        loadedImage = newImage
+                    }
                     print(error.errorDescription ?? "Unknown error")
                 }
                 DispatchQueue.main.async {
