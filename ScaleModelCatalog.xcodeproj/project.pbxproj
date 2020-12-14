@@ -245,7 +245,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		222D327524F915F90032BFF1 /* AuthView */ = {
+		222D327524F915F90032BFF1 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				222D327A24F916460032BFF1 /* Router */,
@@ -254,7 +254,7 @@
 				222D327724F9161E0032BFF1 /* Interactor */,
 				222D327624F916120032BFF1 /* Assembly */,
 			);
-			path = AuthView;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		222D327624F916120032BFF1 /* Assembly */ = {
@@ -432,7 +432,7 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
-		22B83D8F2436259E0001FFB5 /* CollectionView */ = {
+		22B83D8F2436259E0001FFB5 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
 				2293CA442449B4DC0072F59E /* Assembly */,
@@ -442,7 +442,7 @@
 				22D00223243F3DF7007A13C4 /* Router */,
 				22B83D8B2436255A0001FFB5 /* ModelCell */,
 			);
-			path = CollectionView;
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		22D00223243F3DF7007A13C4 /* Router */ = {
@@ -498,9 +498,9 @@
 		22D0023C2440564E007A13C4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				22E36D4424FFD03800733317 /* SignUpView */,
-				222D327524F915F90032BFF1 /* AuthView */,
-				22B83D8F2436259E0001FFB5 /* CollectionView */,
+				22E36D4424FFD03800733317 /* SignUp */,
+				222D327524F915F90032BFF1 /* Auth */,
+				22B83D8F2436259E0001FFB5 /* Collection */,
 				22B83D8E243625930001FFB5 /* DetailView */,
 				22B83D8D2436257F0001FFB5 /* ImageView */,
 				2292E21D243B7CF600762704 /* TabBar */,
@@ -642,7 +642,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		22E36D4424FFD03800733317 /* SignUpView */ = {
+		22E36D4424FFD03800733317 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				22E36D7D24FFD93F00733317 /* Assembly */,
@@ -651,7 +651,7 @@
 				22E36D6D24FFD8BE00733317 /* Presenter */,
 				22E36D4824FFD05A00733317 /* View */,
 			);
-			path = SignUpView;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		22E36D4824FFD05A00733317 /* View */ = {

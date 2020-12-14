@@ -14,12 +14,17 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(test))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style: .plain, target: self, action: #selector(openAuthView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(openAuthView))
         //navigationItem.rightBarButtonItem = AccountBarButton(image: UIImage(systemName: "person.crop.circle.badge.xmark"))
         let viewCollection = CollectionAssembly.createCollectionViewModule()
             //CollectionRouter.createCollectionViewModule()//CollectionViewController(nibName: "CollectionViewController", bundle: nil)
 
-        viewCollection.tabBarItem = UITabBarItem(title: "All Model", image: UIImage(systemName: "list.bullet"), tag: 0)
+        viewCollection.tabBarItem = UITabBarItem(title: "All Model",
+                                                 image: UIImage(systemName: "list.bullet"),
+                                                 tag: 0)
         
         let viewTable = TableAssembly.createTableViewModule()
         viewTable.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
@@ -32,7 +37,8 @@ class TabBarController: UITabBarController {
 
     }
     
-    @objc func openAuthView() {
+    @objc
+    private func openAuthView() {
         let authView = AuthAssembly.createTableViewModule()
         navigationController?.pushViewController(authView, animated: true)
     }

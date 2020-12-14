@@ -21,11 +21,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+        let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(dismissKeyboard))
         view.addGestureRecognizer(Tap)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func back(_ sender: Any) {
@@ -56,7 +56,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 
                 let db = Firestore.firestore()
                 
-                db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
+                db.collection("users").addDocument(data: ["firstname": firstName,
+                                                          "lastname": lastName,
+                                                          "uid": result!.user.uid ]) { (error) in
                     
                     if let error = error {
                         self.showErrorMessage(message: error.localizedDescription)
@@ -100,7 +102,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return result
     }
     
-    @objc func DismissKeyboard() {
+    @objc
+    private func dismissKeyboard() {
         view.endEditing(true)
     }
     /*

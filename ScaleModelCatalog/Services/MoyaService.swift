@@ -40,9 +40,7 @@ extension Network: TargetType {
         return .requestPlain
     }
     
-    public var headers: [String : String]? {
-        return ["Models":"ScaleCar"]
+    public var headers: [String: String]? {
+        return ["Models": "ScaleCar"]
     }
-    
-    
 }

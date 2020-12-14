@@ -10,16 +10,15 @@ import Foundation
 import UIKit
 
 class CollectionInteractor: BaseInteractor {
-    var serviceServer = ServerService.shared
+    var serverService: ServerServiceProtocol = ServerService.shared
     var presenter: CollectionInteractorOutputProtocol?
 }
 
 // MARK: - CollectionInteractorInputProtocol
 extension CollectionInteractor: CollectionInteractorInputProtocol {
     func retrievePagesModels(with page: Int, where count: Int) {
-        let pathPages = "?page=\(page)&limit=\(count)"
-        serviceServer.pathPages = pathPages
-        serviceServer.getPagesModel() { models in
+        let pathPagesString = "?page=\(page)&limit=\(count)"
+        serverService.getPagesModel(pathPagesString: pathPagesString) { models in
             self.presenter?.didRetrieveModels(models)
         }
     }

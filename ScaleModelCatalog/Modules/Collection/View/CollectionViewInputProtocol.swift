@@ -9,5 +9,5 @@
 import UIKit
 
 protocol CollectionViewInputProtocol: class {
-    func reloadInterface(with models: [Model])
+    func reloadInterface()
 }

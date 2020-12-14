@@ -11,4 +11,3 @@ import UIKit
 struct Models: Codable {
     var body: [Model]
 }
-

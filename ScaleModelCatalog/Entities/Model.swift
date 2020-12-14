@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import Moya
 
 struct Model: Codable {
     let id: String

@@ -16,17 +16,16 @@ class TableInteractor: BaseInteractor {
 // MARK: - TableInteractorInputProtocol
 extension TableInteractor: TableInteractorInputProtocol {
     func retrievePagesModels(with page: Int, where count: Int) {
-        let pathPages = "?sortBy=manufacturer&order=asc&page=\(page)&limit=\(count)"
-        print(pathPages)
-        serviceServer.pathPages = pathPages
-        serviceServer.getSortModels() { listof in
-            self.presenter?.didRetrieveModels(listof)
+        let pathPagesString = "?sortBy=manufacturer&order=asc&page=\(page)&limit=\(count)"
+        print(pathPagesString)
+        serviceServer.getSortModels(pathPagesString: pathPagesString) { models in
+            self.presenter?.didRetrieveModels(models)
         }
     }
     func retrieveSortModels() {
-        serviceServer.pathPages = "?sortBy=manufacturer&order=asc"
-        serviceServer.getSortModels() { listof in
-            self.presenter?.didRetrieveModels(listof)
+        let pathPagesString = "?sortBy=manufacturer&order=asc"
+        serviceServer.getSortModels(pathPagesString: pathPagesString) { models in
+            self.presenter?.didRetrieveModels(models)
         }
     }
 }

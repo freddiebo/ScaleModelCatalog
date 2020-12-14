@@ -10,19 +10,32 @@ import Moya
 import Foundation
 import UIKit
 
+protocol ServerServiceProtocol {
+    func getSortModels(pathPagesString: String, completion: @escaping (_ listof: [Model]) -> Void)
+    func getPagesModel(pathPagesString: String, completion: @escaping (_ models: [Model]) -> Void)
+    func getImageModel(with id: String,
+                       from url: String,
+                       completion: @escaping (_ image: UIImage?) -> Void)
+}
+
 class ServerService {
     static let shared = ServerService()
     
     private init() {}
     
-    var pathPages = ""
-    var pagesModel = [Model]()
-    var pagesSortModel = [Model]()
-    let cache = NSCache<NSString,UIImage>()
-    
-    func getSortModels(completion: @escaping (_ listof: [Model]) -> Void) {
-        let provide = MoyaProvider<Network>()
-        provide.request(.modelPages(self.pathPages),completion: { result in
+    // вынести в Presenter. В Interactor'е просто получаем новую
+    // порцию моделек, он говорит Presenter'у: вот новые модели
+    // а презентер уже сам решает что с ними делать. (в данной ситуации добавляет
+    // к остальным моделькам)
+    private var pagesModel = [Model]()
+    private var pagesSortModel = [Model]()
+    private let cache = NSCache<NSString,UIImage>()
+    private let provider = MoyaProvider<Network>()
+}
+
+extension ServerService: ServerServiceProtocol {
+    func getSortModels(pathPagesString: String, completion: @escaping (_ listof: [Model]) -> Void) {
+        provider.request(.modelPages(pathPagesString),completion: { result in
             switch result {
             case .success(let response):
                 do {
@@ -40,9 +53,8 @@ class ServerService {
         })
     }
     
-    func getPagesModel(completion: @escaping (_ models: [Model]) -> Void) {
-        let provide = MoyaProvider<Network>()
-        provide.request(.modelPages(self.pathPages),completion: { result in
+    func getPagesModel(pathPagesString: String, completion: @escaping (_ models: [Model]) -> Void) {
+        provider.request(.modelPages(pathPagesString),completion: { result in
             switch result {
             case .success(let response):
                 do {
@@ -62,12 +74,11 @@ class ServerService {
     
     func getImageModel(with id: String, from url: String, completion: @escaping (_ image: UIImage?) -> Void) {
         var loadedImage = UIImage(named: "NoImage.png")
-        let provide = MoyaProvider<Network>()
         if let cachedVersion = cache.object(forKey: NSString(string: id)) {
             loadedImage = cachedVersion
             completion(loadedImage)
         } else {
-            provide.request(.image(url), completion: { result in
+            provider.request(.image(url), completion: { result in
                 switch result {
                 case .success(let response):
                     let data = response.data
