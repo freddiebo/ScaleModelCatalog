@@ -11,6 +11,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     var presenter: DetailViewOutputProtocol?
     private let modelImageView = UIImageView()
     private let modelSpecLabel = UILabel()
+    private let containerContentView = UIView()
+    private let scrollView = UIScrollView()
+    private let uiWidth = UIScreen.main.bounds.width - 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,29 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         print("DetailViewController viewWillAppear")
         navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Config ImageView
+        modelImageView.frame = CGRect(x: 10,
+                                      y: 10,
+                                      width:uiWidth,
+                                      height: UIScreen.main.bounds.height / 3)
+        
+        // Config Label
+        modelSpecLabel.frame = CGRect(x: 10,
+                                      y: modelImageView.frame.maxY + 10,
+                                      width: uiWidth,
+                                      height: modelSpecLabel.frame.height)
+        
+        containerContentView.frame = CGRect(origin: CGPoint(),
+                                            size: CGSize(width: UIScreen.main.bounds.width,
+                                                         height: modelSpecLabel.frame.maxY))
+        // Config scrollView
+        scrollView.frame = view.frame
+        scrollView.contentSize = containerContentView.frame.size
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -54,7 +80,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
 extension DetailViewController: DetailViewInputProtocol {
     func loadInterface() {
         print("DetailViewController loadInterface")
-
+        
         title = presenter?.model?.name
         navigationItem.largeTitleDisplayMode = .never
         let service = ServerService.shared
@@ -63,10 +89,13 @@ extension DetailViewController: DetailViewInputProtocol {
                                   from: model.image) { image in
                 self.modelImageView.image = image
             }
-        modelSpecLabel.text = model.spec
+            modelSpecLabel.text = model.spec
+            modelSpecLabel.frame = CGRect(x: 10,
+                                          y: modelImageView.frame.maxY + 10,
+                                          width: uiWidth,
+                                          height: UIFont.systemFont(ofSize: 17).calculateHeight(text: model.spec,
+                                                                                                width: uiWidth))
         }
-
-        
     }
 }
 
@@ -74,35 +103,25 @@ extension DetailViewController: DetailViewInputProtocol {
 extension DetailViewController {
     
     private func configurateView() {
-        view.backgroundColor = .white
+        scrollView.alwaysBounceVertical = true
 
-        // Config ImageView
-        modelImageView.frame = CGRect(x: 10,
-                                      y: 10,
-                                      width: UIScreen.main.bounds.width - 20,
-                                      height: UIScreen.main.bounds.height / 3)
+        view.backgroundColor = .white
         modelImageView.contentMode = .scaleAspectFit
-        
-        // Config Label
-        modelSpecLabel.frame = CGRect(x: 10,
-                                      y: 10 + UIScreen.main.bounds.height / 3,
-                                      width: 0,//UIScreen.main.bounds.width - 20,
-                                      height: 0)//UIScreen.main.bounds.height)
         modelSpecLabel.numberOfLines = 0
-        modelSpecLabel.sizeToFit()
-        
-        // Config conteiner for ScrollView
-        let containerContentView = UIView()
         containerContentView.addSubview(modelImageView)
         containerContentView.addSubview(modelSpecLabel)
-        containerContentView.frame = CGRect(origin: CGPoint(),
-                                            size: CGSize(width: modelImageView.frame.width,
-                                                         height: modelImageView.frame.height +
-                                                            modelSpecLabel.frame.height))
-        // Config scrollView
-        let scrollView = UIScrollView(frame: UIScreen.main.bounds)
         view.addSubview(scrollView)
         scrollView.addSubview(containerContentView)
-        scrollView.contentSize = containerContentView.frame.size
+    }
+}
+
+extension UIFont {
+    func calculateHeight(text: String, width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let boundingBox = text.boundingRect(with: constraintRect,
+                                        options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                        attributes: [.font: self],
+                                        context: nil)
+        return boundingBox.height
     }
 }

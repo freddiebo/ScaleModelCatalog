@@ -79,7 +79,6 @@ extension CollectionViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView,
                         cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        //print("cancel \(indexPaths)")
     }
     
 }
@@ -105,9 +104,6 @@ extension CollectionViewController: CollectionViewInputProtocol {
 
 extension CollectionViewController {
     private func configureCollectionView() {
-//        let nibCell = UINib(nibName: "ModelViewCell",
-//                            bundle: nil)
-//        self.collectionView?.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.register(ModelViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         countPage = Int((collectionView.frame.height/150 + 1)) + 1
     }
