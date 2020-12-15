@@ -8,7 +8,6 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
     var presenter: ImageViewOutputProtocol?
-    var imageSelected: UIImage?
     
     @IBOutlet weak var viewScroll: UIScrollView!
     @IBOutlet weak var viewImage: UIImageView!
@@ -37,7 +36,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
 // MARK: - ImageViewInputProtocol
 extension ImageViewController: ImageViewInputProtocol {
     func loadInterface() {
-        viewImage.image = imageSelected
+        viewImage.image = presenter?.image
         viewScroll.minimumZoomScale = 1
         viewScroll.maximumZoomScale = 3
         viewScroll.delegate = self

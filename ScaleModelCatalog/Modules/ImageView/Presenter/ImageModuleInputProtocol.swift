@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ImageModuleInputProtocol: class {
-    
+    func setImage(_ image: UIImage)
 }

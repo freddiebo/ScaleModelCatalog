@@ -9,34 +9,33 @@
 import Foundation
 import UIKit
 
-//class DetailPresenter: DetailPresenterProtocol {
 class DetailPresenter: BasePresenter {
     weak var view: DetailViewInputProtocol?
     var interactor: DetailInteractorInputProtocol?
     var router: DetailRouterInputProtocol?
-    /*
-    func viewDidLoad() {
-        view?.loadInterface()
-    }
     
-    func imageViewShow(image: UIImage, from view: DetailViewProtocol) {
-        router?.presentImageView(for: image, from: view)
-    }*/
+    private(set) var model: Model?
 }
 
 // MARK: - DetailViewOutputProtocol
 extension DetailPresenter: DetailViewOutputProtocol {
+    
     func viewDidLoad() {
+        print("DetailPresenter viewDidLoad")
         view?.loadInterface()
     }
     
     func imageViewShow(image: UIImage, from view: DetailViewInputProtocol) {
+        print("DetailPresenter imageViewShow")
         router?.presentImageView(for: image, from: view)
     }
 }
 
 // MARK: - DetailModuleInputProtocol
 extension DetailPresenter: DetailModuleInputProtocol {
+    func setModel(_ model: Model) {
+        self.model = model
+    }
 
 }
 

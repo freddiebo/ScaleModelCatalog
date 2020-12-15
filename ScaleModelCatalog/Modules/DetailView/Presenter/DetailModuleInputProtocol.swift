@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailModuleInputProtocol: class {
-
+    func setModel(_ model: Model) 
 }

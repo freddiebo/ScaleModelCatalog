@@ -21,10 +21,12 @@ class ModelViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.addSubview(modelName)
         self.addSubview(modelImage)
         modelImage.contentMode = .scaleAspectFit
         modelName.font = .systemFont(ofSize: 14, weight: .bold)
+        
         configureContraints()
     }
     

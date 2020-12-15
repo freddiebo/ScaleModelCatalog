@@ -11,10 +11,13 @@ class ImagePresenter: BasePresenter {
     weak var view: ImageViewInputProtocol?
     var interactor: ImageInteractorInputProtocol?
     var router: ImageRouterInputProtocol?
+    
+    private(set) var image: UIImage?
 }
 
 // MARK: - ImageViewOutputProtocol
 extension ImagePresenter: ImageViewOutputProtocol {
+    
     func viewDidLoad() {
         view?.loadInterface()
     }
@@ -23,6 +26,10 @@ extension ImagePresenter: ImageViewOutputProtocol {
 
 // MARK: - ImageModuleInputProtocol
 extension ImagePresenter: ImageModuleInputProtocol {
+    func setImage(_ image: UIImage) {
+        self.image = image
+    }
+    
 
 }
 

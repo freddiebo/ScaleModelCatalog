@@ -13,7 +13,9 @@ class DetailAssembly: BaseAssembly {
     var viewController: UIViewController!
     
     static func createDetailViewModule(for model: Model) -> UIViewController {
-        let view = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        print("DetailAssembly createDetailViewModule")
+
+        let view = DetailViewController()
         let presenter = DetailPresenter()
         let interactor = DetailInteractor()
         let router = DetailRouter()
@@ -21,9 +23,10 @@ class DetailAssembly: BaseAssembly {
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
+        (presenter as DetailModuleInputProtocol).setModel(model)
+        
         
         view.presenter = presenter
-        view.model = model
         interactor.presenter = presenter
         router.presenter = presenter
 

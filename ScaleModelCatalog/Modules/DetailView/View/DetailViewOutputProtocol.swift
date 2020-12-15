@@ -12,4 +12,6 @@ import UIKit
 protocol DetailViewOutputProtocol: class {
     func viewDidLoad()
     func imageViewShow(image: UIImage, from view: DetailViewInputProtocol)
+    
+    var model: Model? { get }
 }

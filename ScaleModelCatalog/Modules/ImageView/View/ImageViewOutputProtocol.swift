@@ -10,4 +10,6 @@ import UIKit
 
 protocol ImageViewOutputProtocol: class {
     func viewDidLoad()
+    
+    var image: UIImage? { get }
 }

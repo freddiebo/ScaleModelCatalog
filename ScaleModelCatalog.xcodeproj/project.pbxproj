@@ -63,7 +63,6 @@
 		229E1CE02420EF27000F3957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229E1CDF2420EF27000F3957 /* Assets.xcassets */; };
 		229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229E1CE12420EF27000F3957 /* LaunchScreen.storyboard */; };
 		22A16FA825011744008AD069 /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A16FA725011744008AD069 /* SignUpTextField.swift */; };
-		22B83D712434C7B50001FFB5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D702434C7B50001FFB5 /* DetailViewController.xib */; };
 		22B83D772434CFF90001FFB5 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D762434CFF90001FFB5 /* ImageViewController.xib */; };
 		22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D822435E42E0001FFB5 /* CollectionViewController.swift */; };
 		22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D832435E42E0001FFB5 /* CollectionViewController.xib */; };
@@ -173,7 +172,6 @@
 		229E1CE22420EF27000F3957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229E1CE42420EF27000F3957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A16FA725011744008AD069 /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
-		22B83D702434C7B50001FFB5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		22B83D762434CFF90001FFB5 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		22B83D822435E42E0001FFB5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		22B83D832435E42E0001FFB5 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
@@ -523,7 +521,6 @@
 		22D00265244264D5007A13C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22B83D702434C7B50001FFB5 /* DetailViewController.xib */,
 				2246FEC02423B21F0009F8EC /* DetailViewController.swift */,
 				22F09B30244D896000440E6A /* DetailViewOutputProtocol.swift */,
 				22F09B32244D897000440E6A /* DetailViewInputProtocol.swift */,
@@ -784,7 +781,6 @@
 				22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */,
 				222D328224F934C80032BFF1 /* GoogleService-Info.plist in Resources */,
 				22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */,
-				22B83D712434C7B50001FFB5 /* DetailViewController.xib in Resources */,
 				229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */,
 				22B83D772434CFF90001FFB5 /* ImageViewController.xib in Resources */,
 				229E1CE02420EF27000F3957 /* Assets.xcassets in Resources */,

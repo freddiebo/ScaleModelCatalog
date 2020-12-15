@@ -21,9 +21,9 @@ class ImageAssembly: BaseAssembly {
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
+        (presenter as ImageModuleInputProtocol).setImage(image)
         
         view.presenter = presenter
-        view.imageSelected = image
         interactor.presenter = presenter
         router.presenter = presenter
 

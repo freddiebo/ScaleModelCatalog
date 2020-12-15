@@ -15,7 +15,7 @@ class CollectionViewController: UICollectionViewController {
     private let countOnPage = 3
     private var countPage = 1
     private var lastCell = 0
-    var presenter: CollectionViewOutputProtocol!
+    var presenter: CollectionViewOutputProtocol?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class CollectionViewController: UICollectionViewController {
         configureCollectionView()
         countPage = Int((collectionView.frame.height/150 + 1)) + 1
         
-        presenter.pageViewDidLoad(with: 1, where: countPage * countOnPage)
+        presenter?.pageViewDidLoad(with: 1, where: countPage * countOnPage)
     }
 }
 
@@ -34,7 +34,7 @@ class CollectionViewController: UICollectionViewController {
 extension CollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        presenter.models.count
+        presenter?.models.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,21 +42,22 @@ extension CollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
             fatalError("can't reuse ModelViewCell")
         }
-        let model = presenter.models[indexPath.row]
-        
         let service = ServerService.shared
-        service.getImageModel(with: model.id,
-                              from: model.image,
-                              completion: { image in
-                                guard let image = image else { return }
-            cell.configureCell(image: image,
-                               nameText: model.name)
-        })
+        if let model = presenter?.models[indexPath.row] {
+            service.getImageModel(with: model.id,
+                                  from: model.image) { image in
+                                    guard let image = image else { return }
+                cell.configureCell(image: image,
+                                   nameText: model.name)
+            }
+        }
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.detailViewShow(model: presenter.models[indexPath.row], from: self)
+        if let model = presenter?.models[indexPath.row] {
+            presenter?.detailViewShow(model: model, from: self)
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -72,7 +73,7 @@ extension CollectionViewController: UICollectionViewDataSourcePrefetching {
         if lastCell < lastIndexPath.row {
             lastCell = lastIndexPath.row
             countPage += 1
-            presenter.pageViewDidLoad(with: countPage, where: countOnPage)
+            presenter?.pageViewDidLoad(with: countPage, where: countOnPage)
         }
       }
     
