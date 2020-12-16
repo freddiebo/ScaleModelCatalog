@@ -30,7 +30,12 @@ class TabBarController: UITabBarController {
         viewTable.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
         viewTable.tabBarItem = UITabBarItem(title: "Group Model", image: UIImage(systemName: "list.bullet.below.rectangle"), tag: 1)
         
-        let tabBarList = [viewCollection,viewTable]
+        let favotiteViewController = FavsAssembly.createFavsViewModule()
+        favotiteViewController.tabBarItem = UITabBarItem(title: "Favs",
+                                                         image: UIImage(systemName: "heart"),
+                                                         tag: 2)
+        
+        let tabBarList = [viewCollection, viewTable, favotiteViewController]
 
         viewControllers = tabBarList
         // Do any additional setup after loading the view.

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class CollectionRouter: BaseRouter {
-    weak var presenter: CollectionViewOutputProtocol!
+    weak var presenter: CollectionRouterOutputProtocol!
 }
 
 // MARK: - CollectionRouterInputProtocol

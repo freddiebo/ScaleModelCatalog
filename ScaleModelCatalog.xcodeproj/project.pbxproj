@@ -110,6 +110,19 @@
 		22F09B35244D8F4400440E6A /* DetailRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B34244D8F4400440E6A /* DetailRouterOutputProtocol.swift */; };
 		22F09B37244D8F5A00440E6A /* DetailRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F09B36244D8F5A00440E6A /* DetailRouterInputProtocol.swift */; };
 		387188C2C60E525A94EDA869 /* Pods_ScaleModelCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDDE32FEC47308C760A2A28 /* Pods_ScaleModelCatalog.framework */; };
+		40679EF2258A237100F44343 /* FavsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679EF1258A237100F44343 /* FavsViewController.swift */; };
+		40679EF6258A23BC00F44343 /* FavsViewControllerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679EF5258A23BC00F44343 /* FavsViewControllerInputProtocol.swift */; };
+		40679EF9258A23D900F44343 /* FavsViewControllerOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679EF8258A23D900F44343 /* FavsViewControllerOutputProtocol.swift */; };
+		40679EFC258A23F800F44343 /* FavsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679EFB258A23F800F44343 /* FavsPresenter.swift */; };
+		40679EFF258A240F00F44343 /* FavsModuleInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679EFE258A240F00F44343 /* FavsModuleInputProtocol.swift */; };
+		40679F02258A244400F44343 /* FavsModuleOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F01258A244400F44343 /* FavsModuleOutputProtocol.swift */; };
+		40679F05258A245200F44343 /* FavsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F04258A245200F44343 /* FavsRouter.swift */; };
+		40679F08258A246400F44343 /* FavsRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F07258A246400F44343 /* FavsRouterInputProtocol.swift */; };
+		40679F0B258A247A00F44343 /* FavsRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F0A258A247A00F44343 /* FavsRouterOutputProtocol.swift */; };
+		40679F0E258A248C00F44343 /* FavsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F0D258A248C00F44343 /* FavsInteractor.swift */; };
+		40679F11258A24A300F44343 /* FavsInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F10258A24A300F44343 /* FavsInteractorInputProtocol.swift */; };
+		40679F14258A24CD00F44343 /* FavsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F13258A24CD00F44343 /* FavsInteractorOutputProtocol.swift */; };
+		40679F17258A24EC00F44343 /* FavsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40679F16258A24EC00F44343 /* FavsAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +233,19 @@
 		22F09B36244D8F5A00440E6A /* DetailRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterInputProtocol.swift; sourceTree = "<group>"; };
 		349CF61C67B4385DF9206135 /* Pods-ScaleModelCatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaleModelCatalog.release.xcconfig"; path = "Target Support Files/Pods-ScaleModelCatalog/Pods-ScaleModelCatalog.release.xcconfig"; sourceTree = "<group>"; };
 		3EDDE32FEC47308C760A2A28 /* Pods_ScaleModelCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaleModelCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40679EF1258A237100F44343 /* FavsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewController.swift; sourceTree = "<group>"; };
+		40679EF5258A23BC00F44343 /* FavsViewControllerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewControllerInputProtocol.swift; sourceTree = "<group>"; };
+		40679EF8258A23D900F44343 /* FavsViewControllerOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewControllerOutputProtocol.swift; sourceTree = "<group>"; };
+		40679EFB258A23F800F44343 /* FavsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsPresenter.swift; sourceTree = "<group>"; };
+		40679EFE258A240F00F44343 /* FavsModuleInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsModuleInputProtocol.swift; sourceTree = "<group>"; };
+		40679F01258A244400F44343 /* FavsModuleOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsModuleOutputProtocol.swift; sourceTree = "<group>"; };
+		40679F04258A245200F44343 /* FavsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsRouter.swift; sourceTree = "<group>"; };
+		40679F07258A246400F44343 /* FavsRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsRouterInputProtocol.swift; sourceTree = "<group>"; };
+		40679F0A258A247A00F44343 /* FavsRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsRouterOutputProtocol.swift; sourceTree = "<group>"; };
+		40679F0D258A248C00F44343 /* FavsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsInteractor.swift; sourceTree = "<group>"; };
+		40679F10258A24A300F44343 /* FavsInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		40679F13258A24CD00F44343 /* FavsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		40679F16258A24EC00F44343 /* FavsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +522,7 @@
 		22D0023C2440564E007A13C4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40679EEB258A233800F44343 /* Favs */,
 				22E36D4424FFD03800733317 /* SignUp */,
 				222D327524F915F90032BFF1 /* Auth */,
 				22B83D8F2436259E0001FFB5 /* Collection */,
@@ -708,6 +735,66 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		40679EEB258A233800F44343 /* Favs */ = {
+			isa = PBXGroup;
+			children = (
+				40679EF0258A236100F44343 /* View */,
+				40679EEF258A235400F44343 /* Presenter */,
+				40679EEE258A234E00F44343 /* Router */,
+				40679EED258A234800F44343 /* Interactor */,
+				40679EEC258A234000F44343 /* Assembly */,
+			);
+			path = Favs;
+			sourceTree = "<group>";
+		};
+		40679EEC258A234000F44343 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				40679F16258A24EC00F44343 /* FavsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		40679EED258A234800F44343 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				40679F0D258A248C00F44343 /* FavsInteractor.swift */,
+				40679F13258A24CD00F44343 /* FavsInteractorOutputProtocol.swift */,
+				40679F10258A24A300F44343 /* FavsInteractorInputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		40679EEE258A234E00F44343 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				40679F04258A245200F44343 /* FavsRouter.swift */,
+				40679F07258A246400F44343 /* FavsRouterInputProtocol.swift */,
+				40679F0A258A247A00F44343 /* FavsRouterOutputProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		40679EEF258A235400F44343 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				40679EFB258A23F800F44343 /* FavsPresenter.swift */,
+				40679EFE258A240F00F44343 /* FavsModuleInputProtocol.swift */,
+				40679F01258A244400F44343 /* FavsModuleOutputProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		40679EF0258A236100F44343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40679EF1258A237100F44343 /* FavsViewController.swift */,
+				40679EF5258A23BC00F44343 /* FavsViewControllerInputProtocol.swift */,
+				40679EF8258A23D900F44343 /* FavsViewControllerOutputProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E02AAD010D29E02651A00C9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,8 +928,11 @@
 				22D0029A24448633007A13C4 /* TableRouter.swift in Sources */,
 				2285808B24570A340075EC08 /* TableRouterOutputProtocol.swift in Sources */,
 				22E36D8024FFD95A00733317 /* SignUpAssembly.swift in Sources */,
+				40679F08258A246400F44343 /* FavsRouterInputProtocol.swift in Sources */,
+				40679F17258A24EC00F44343 /* FavsAssembly.swift in Sources */,
 				22E36D7124FFD8CB00733317 /* SignUpModuleInputProtocol.swift in Sources */,
 				228580682456F0A30075EC08 /* ImageInteractorInputProtocol.swift in Sources */,
+				40679EF2258A237100F44343 /* FavsViewController.swift in Sources */,
 				222D329224F93FE70032BFF1 /* AuthRouterOutputProtocol.swift in Sources */,
 				22D0027B24426823007A13C4 /* DetailRouter.swift in Sources */,
 				2285806A2456F0B10075EC08 /* ImageInteractorOutputProtocol.swift in Sources */,
@@ -854,6 +944,8 @@
 				222D328424F936380032BFF1 /* AuthViewOutputProtocol.swift in Sources */,
 				222D329024F93FC90032BFF1 /* AuthRouterInputProtocol.swift in Sources */,
 				22D00281244268E9007A13C4 /* DetailInteractorOutputProtocol.swift in Sources */,
+				40679F11258A24A300F44343 /* FavsInteractorInputProtocol.swift in Sources */,
+				40679EF6258A23BC00F44343 /* FavsViewControllerInputProtocol.swift in Sources */,
 				228580702456F21E0075EC08 /* ImageViewInputProtocol.swift in Sources */,
 				22D0029224446E84007A13C4 /* ImageInteractor.swift in Sources */,
 				228580782456F3E00075EC08 /* ImageRouter.swift in Sources */,
@@ -861,12 +953,14 @@
 				22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */,
 				22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */,
 				2285807D2457029B0075EC08 /* TableInteractorInputProtocol.swift in Sources */,
+				40679F0E258A248C00F44343 /* FavsInteractor.swift in Sources */,
 				2285806C2456F1890075EC08 /* ImageModuleInputProtocol.swift in Sources */,
 				222D328C24F939280032BFF1 /* AuthModuleOutputProtocol.swift in Sources */,
 				2293CA492449B6C80072F59E /* BaseViewController.swift in Sources */,
 				2293CA532449C1440072F59E /* CollectionInteractorOutputProtocol.swift in Sources */,
 				2293CA552449C2CE0072F59E /* CollectionModuleInputProtocol.swift in Sources */,
 				2293CA512449B7040072F59E /* BaseInteractor.swift in Sources */,
+				40679F05258A245200F44343 /* FavsRouter.swift in Sources */,
 				2246FEBC242258510009F8EC /* Model.swift in Sources */,
 				222D327F24F924690032BFF1 /* AuthViewController.swift in Sources */,
 				22F09B33244D897000440E6A /* DetailViewInputProtocol.swift in Sources */,
@@ -878,6 +972,7 @@
 				22E36D6024FFD6B600733317 /* SignUpViewOutputProtocol.swift in Sources */,
 				22E36D7C24FFD92600733317 /* SignUpRouterOutputProtocol.swift in Sources */,
 				222D329624F9440D0032BFF1 /* AuthInteractorInputProtocol.swift in Sources */,
+				40679F02258A244400F44343 /* FavsModuleOutputProtocol.swift in Sources */,
 				22B83D99243785C70001FFB5 /* TableViewController.swift in Sources */,
 				2293CA5D2449CB3F0072F59E /* CollectionRouterInputProtocol.swift in Sources */,
 				22D0023F2440615E007A13C4 /* ServerService.swift in Sources */,
@@ -886,11 +981,15 @@
 				22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */,
 				2285807F245702C20075EC08 /* TableInteractorOutputProtocol.swift in Sources */,
 				222D328824F938760032BFF1 /* AuthPresenter.swift in Sources */,
+				40679EF9258A23D900F44343 /* FavsViewControllerOutputProtocol.swift in Sources */,
+				40679EFC258A23F800F44343 /* FavsPresenter.swift in Sources */,
 				228580762456F3550075EC08 /* ImageRouterOutputProtocol.swift in Sources */,
 				22F09B2B244D870600440E6A /* DetailInteractorInputProtocol.swift in Sources */,
 				2285806E2456F1930075EC08 /* ImageModuleOutputProtocol.swift in Sources */,
+				40679F14258A24CD00F44343 /* FavsInteractorOutputProtocol.swift in Sources */,
 				2293CA592449C40A0072F59E /* CollectionViewInputProtocol.swift in Sources */,
 				22E36D7224FFD8CB00733317 /* SignUpModuleOutputProtocol.swift in Sources */,
+				40679F0B258A247A00F44343 /* FavsRouterOutputProtocol.swift in Sources */,
 				22858083245707210075EC08 /* TableModuleOutputProtocol.swift in Sources */,
 				228580722456F2280075EC08 /* ImageViewOutputProtocol.swift in Sources */,
 				22F09B2D244D88AF00440E6A /* DetailModuleInputProtocol.swift in Sources */,
@@ -927,6 +1026,7 @@
 				22A16FA825011744008AD069 /* SignUpTextField.swift in Sources */,
 				222D329424F941330032BFF1 /* AuthInteractor.swift in Sources */,
 				228580742456F3490075EC08 /* ImageRouterInputProtocol.swift in Sources */,
+				40679EFF258A240F00F44343 /* FavsModuleInputProtocol.swift in Sources */,
 				222D328E24F93F860032BFF1 /* AuthRouter.swift in Sources */,
 				22E36D8424FFD97700733317 /* SignUpInteractor.swift in Sources */,
 				2293CA5F2449CB500072F59E /* CollectionRouterOutputProtocol.swift in Sources */,
