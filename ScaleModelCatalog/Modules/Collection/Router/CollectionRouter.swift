@@ -18,7 +18,7 @@ extension CollectionRouter: CollectionRouterInputProtocol {
     func presentDetailView(for model: Model, from view: CollectionViewInputProtocol) {
         let detailView = DetailAssembly.createDetailViewModule(for: model)
         //DetailRouter.createDetailViewModule(for: model)
-        if let sourceView = view as? UICollectionViewController {
+        if let sourceView = view as? UIViewController {
             sourceView.navigationController?.pushViewController(detailView, animated: true)
         }
     }

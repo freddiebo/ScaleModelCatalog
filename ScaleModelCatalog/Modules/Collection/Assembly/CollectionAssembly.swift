@@ -12,8 +12,8 @@ class CollectionAssembly: BaseAssembly {
     var moduleInput: CollectionModuleInputProtocol!
     var viewController: UIViewController!
     
-    static func createCollectionViewModule() -> UICollectionViewController {
-        let view = CollectionViewController(nibName: "CollectionViewController", bundle: nil)
+    static func createCollectionViewModule() -> UIViewController {
+        let view = CollectionViewController(nibName: "ViewController", bundle: nil)
         let presenter = CollectionPresenter()
         let interactor = CollectionInteractor()
         let router = CollectionRouter()

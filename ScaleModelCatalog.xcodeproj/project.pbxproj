@@ -65,7 +65,6 @@
 		22A16FA825011744008AD069 /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A16FA725011744008AD069 /* SignUpTextField.swift */; };
 		22B83D772434CFF90001FFB5 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D762434CFF90001FFB5 /* ImageViewController.xib */; };
 		22B83D842435E42E0001FFB5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D822435E42E0001FFB5 /* CollectionViewController.swift */; };
-		22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D832435E42E0001FFB5 /* CollectionViewController.xib */; };
 		22B83D882435E4780001FFB5 /* ModelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D862435E4780001FFB5 /* ModelViewCell.swift */; };
 		22B83D892435E4780001FFB5 /* ModelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B83D872435E4780001FFB5 /* ModelViewCell.xib */; };
 		22B83D91243728F30001FFB5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B83D90243728F30001FFB5 /* TabBarController.swift */; };
@@ -86,6 +85,7 @@
 		22D0029F2444874B007A13C4 /* TablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0029E2444874B007A13C4 /* TablePresenter.swift */; };
 		22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A3244487C0007A13C4 /* TableInteractor.swift */; };
 		22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */ = {isa = PBXBuildFile; fileRef = 22D002B52444A04E007A13C4 /* ScaleCar.json */; };
+		22D78AB0258A83B1004164B5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D78AAF258A83B1004164B5 /* ViewController.xib */; };
 		22E36D4324FFBCBC00733317 /* AccountBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D4224FFBCBC00733317 /* AccountBarButton.swift */; };
 		22E36D6024FFD6B600733317 /* SignUpViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */; };
 		22E36D6124FFD6B600733317 /* SignUpViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */; };
@@ -187,7 +187,6 @@
 		22A16FA725011744008AD069 /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
 		22B83D762434CFF90001FFB5 /* ImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		22B83D822435E42E0001FFB5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		22B83D832435E42E0001FFB5 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
 		22B83D862435E4780001FFB5 /* ModelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewCell.swift; sourceTree = "<group>"; };
 		22B83D872435E4780001FFB5 /* ModelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelViewCell.xib; sourceTree = "<group>"; };
 		22B83D90243728F30001FFB5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -208,6 +207,7 @@
 		22D0029E2444874B007A13C4 /* TablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePresenter.swift; sourceTree = "<group>"; };
 		22D002A3244487C0007A13C4 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
 		22D002B52444A04E007A13C4 /* ScaleCar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScaleCar.json; sourceTree = "<group>"; };
+		22D78AAF258A83B1004164B5 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		22E36D4224FFBCBC00733317 /* AccountBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBarButton.swift; sourceTree = "<group>"; };
 		22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewOutputProtocol.swift; sourceTree = "<group>"; };
 		22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewInputProtocol.swift; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 				2293CA5A2449C41A0072F59E /* CollectionViewOutputProtocol.swift */,
 				2293CA582449C40A0072F59E /* CollectionViewInputProtocol.swift */,
 				22B83D822435E42E0001FFB5 /* CollectionViewController.swift */,
-				22B83D832435E42E0001FFB5 /* CollectionViewController.xib */,
+				22D78AAF258A83B1004164B5 /* ViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -863,9 +863,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D78AB0258A83B1004164B5 /* ViewController.xib in Resources */,
 				22E36D6524FFD6E500733317 /* SignUpViewController.xib in Resources */,
 				222D328024F924690032BFF1 /* AuthViewController.xib in Resources */,
-				22B83D852435E42E0001FFB5 /* CollectionViewController.xib in Resources */,
 				222D328224F934C80032BFF1 /* GoogleService-Info.plist in Resources */,
 				22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */,
 				229E1CE32420EF27000F3957 /* LaunchScreen.storyboard in Resources */,

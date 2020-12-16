@@ -9,8 +9,6 @@
 import UIKit
 
 protocol CollectionRouterInputProtocol: class {
-    //static func createCollectionViewModule() -> UICollectionViewController
-
     // PRESENTER -> ROUTER
     func presentDetailView(for model: Model, from view: CollectionViewInputProtocol)
 }

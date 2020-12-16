@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UIViewController {
     private let reuseIdentifier = "reuseIdentifier"
     
     private let spinner = UIActivityIndicatorView()
@@ -17,7 +17,9 @@ class CollectionViewController: UICollectionViewController {
     private var countPage = 1
     private var lastCell = 0
     var presenter: CollectionViewOutputProtocol?
- 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,13 +36,14 @@ class CollectionViewController: UICollectionViewController {
 }
 
 // MARK: - UICollectionViewDataSource & UICollectionViewDelegate
-extension CollectionViewController {
-    override func collectionView(_ collectionView: UICollectionView,
+extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
         presenter?.models.count ?? 0
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //let cell = ModelViewCell()
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
             fatalError("can't reuse ModelViewCell")
@@ -51,19 +54,20 @@ extension CollectionViewController {
                                   from: model.image) { image in
                                     guard let image = image else { return }
                 cell.configureCell(image: image,
-                                   nameText: model.name)
+                                   nameText: model.name,
+                                   isItemFav: model.isInFavs)
             }
         }
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter?.models[indexPath.row] {
             presenter?.detailViewShow(model: model, from: self)
         }
     }
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
 }
