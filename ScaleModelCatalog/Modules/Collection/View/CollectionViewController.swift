@@ -11,6 +11,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
     private let reuseIdentifier = "reuseIdentifier"
     
+    private let spinner = UIActivityIndicatorView()
     private var bo = true
     private let countOnPage = 3
     private var countPage = 1
@@ -22,6 +23,8 @@ class CollectionViewController: UICollectionViewController {
         
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
+        
+        spinnerSetting()
         
         configureCollectionView()
         countPage = Int((collectionView.frame.height/150 + 1)) + 1
@@ -99,6 +102,7 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface() {
         collectionView.reloadData()
+        spinner.stopAnimating()
     }
 }
 
@@ -106,5 +110,17 @@ extension CollectionViewController {
     private func configureCollectionView() {
         collectionView.register(ModelViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         countPage = Int((collectionView.frame.height/150 + 1)) + 1
+    }
+    
+    private func spinnerSetting() {
+        spinner.color = .darkGray
+        spinner.style = .large
+        spinner.startAnimating()
+        
+        view.addSubview(spinner)
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
