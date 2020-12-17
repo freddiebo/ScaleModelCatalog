@@ -68,10 +68,13 @@ class ModelViewCell: UICollectionViewCell {
         contentView.addSubview(backContentLabelView)
         backContentLabelView.addSubview(modelName)
         
-        let tapGeusteRecognizer = UITapGestureRecognizer(target: self,
-                                                         action: #selector(tapToFavs(tapGestureRecognizer:)))
+        modelImage.isUserInteractionEnabled = true
         favImageContainerView.isUserInteractionEnabled = true
-        favImageContainerView.addGestureRecognizer(tapGeusteRecognizer)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(tapToFavs))
+        favImageContainerView.isUserInteractionEnabled = true
+        favImageContainerView.addGestureRecognizer(tapGestureRecognizer)
         
         configureContraints()
     }
@@ -121,7 +124,7 @@ extension ModelViewCell {
     }
     
     @objc
-    private func tapToFavs(tapGestureRecognizer: UITapGestureRecognizer) {
+    private func tapToFavs() {
         print("tap like")
     }
 }

@@ -11,8 +11,14 @@ import UIKit
 class FavsViewController: UIViewController {
     var presenter: FavsViewControllerOutputProtocol?
     private let reuseIdentifier = "reuseIdentifier1"
+    
     private let collectionView: UICollectionView = {
-        let view = UICollectionView()
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width,
+                                     height: FavsViewCell.height)
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemBackground
         return view
     }()
     
@@ -20,7 +26,7 @@ class FavsViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.dataSource = self
-        
+        collectionView.delegate = self
         presenter?.viewDidLoad()
     }
 }
@@ -50,6 +56,17 @@ extension FavsViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK: - FavsViewControllerInputProtocol
 extension FavsViewController: FavsViewControllerInputProtocol {
     func setupView() {
+        collectionView.register(FavsViewCell.self,
+                                forCellWithReuseIdentifier: reuseIdentifier)
+        
         view.backgroundColor = .systemBackground
+        view.addSubview(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
