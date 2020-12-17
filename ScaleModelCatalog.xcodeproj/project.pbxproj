@@ -86,6 +86,8 @@
 		22D002A4244487C0007A13C4 /* TableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D002A3244487C0007A13C4 /* TableInteractor.swift */; };
 		22D002B62444A04E007A13C4 /* ScaleCar.json in Resources */ = {isa = PBXBuildFile; fileRef = 22D002B52444A04E007A13C4 /* ScaleCar.json */; };
 		22D78AB0258A83B1004164B5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D78AAF258A83B1004164B5 /* ViewController.xib */; };
+		22D78AB4258B44C5004164B5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D78AB3258B44C5004164B5 /* FavoriteService.swift */; };
+		22D78AB8258B452C004164B5 /* FavsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D78AB7258B452C004164B5 /* FavsViewCell.swift */; };
 		22E36D4324FFBCBC00733317 /* AccountBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D4224FFBCBC00733317 /* AccountBarButton.swift */; };
 		22E36D6024FFD6B600733317 /* SignUpViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */; };
 		22E36D6124FFD6B600733317 /* SignUpViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */; };
@@ -208,6 +210,8 @@
 		22D002A3244487C0007A13C4 /* TableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInteractor.swift; sourceTree = "<group>"; };
 		22D002B52444A04E007A13C4 /* ScaleCar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScaleCar.json; sourceTree = "<group>"; };
 		22D78AAF258A83B1004164B5 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		22D78AB3258B44C5004164B5 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		22D78AB7258B452C004164B5 /* FavsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewCell.swift; sourceTree = "<group>"; };
 		22E36D4224FFBCBC00733317 /* AccountBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBarButton.swift; sourceTree = "<group>"; };
 		22E36D5E24FFD6B600733317 /* SignUpViewOutputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewOutputProtocol.swift; sourceTree = "<group>"; };
 		22E36D5F24FFD6B600733317 /* SignUpViewInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewInputProtocol.swift; sourceTree = "<group>"; };
@@ -541,6 +545,7 @@
 			children = (
 				22D0023E2440615E007A13C4 /* ServerService.swift */,
 				22718EED246441B6006312A4 /* MoyaService.swift */,
+				22D78AB3258B44C5004164B5 /* FavoriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				40679EEE258A234E00F44343 /* Router */,
 				40679EED258A234800F44343 /* Interactor */,
 				40679EEC258A234000F44343 /* Assembly */,
+				22D78AB7258B452C004164B5 /* FavsViewCell.swift */,
 			);
 			path = Favs;
 			sourceTree = "<group>";
@@ -1006,6 +1012,7 @@
 				22CADCC3243205310038BAA7 /* Models.swift in Sources */,
 				22D00231243F5B55007A13C4 /* CollectionPresenter.swift in Sources */,
 				22E36D7324FFD8CB00733317 /* SignUpPresenter.swift in Sources */,
+				22D78AB4258B44C5004164B5 /* FavoriteService.swift in Sources */,
 				22D0028D24446E46007A13C4 /* ImagePresenter.swift in Sources */,
 				22F09B37244D8F5A00440E6A /* DetailRouterInputProtocol.swift in Sources */,
 				2293CA572449C2DE0072F59E /* CollectionModuleOutputProtocol.swift in Sources */,
@@ -1027,6 +1034,7 @@
 				222D329424F941330032BFF1 /* AuthInteractor.swift in Sources */,
 				228580742456F3490075EC08 /* ImageRouterInputProtocol.swift in Sources */,
 				40679EFF258A240F00F44343 /* FavsModuleInputProtocol.swift in Sources */,
+				22D78AB8258B452C004164B5 /* FavsViewCell.swift in Sources */,
 				222D328E24F93F860032BFF1 /* AuthRouter.swift in Sources */,
 				22E36D8424FFD97700733317 /* SignUpInteractor.swift in Sources */,
 				2293CA5F2449CB500072F59E /* CollectionRouterOutputProtocol.swift in Sources */,

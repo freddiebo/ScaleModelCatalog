@@ -25,6 +25,7 @@ class ModelViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray5
         view.layer.cornerRadius = 12
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner]
         return view
     }()
     
@@ -36,8 +37,21 @@ class ModelViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private var modelName: UILabel = UILabel()
-    private var backTextView: UIView = UIView()
+    private var modelName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 10, weight: .bold)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private var backContentLabelView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray5
+        view.layer.cornerRadius = 12
+        return view
+    }()
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -51,14 +65,13 @@ class ModelViewCell: UICollectionViewCell {
         contentView.addSubview(modelImage)
         modelImage.addSubview(favImageContainerView)
         favImageContainerView.addSubview(favImageView)
-        contentView.addSubview(backTextView)
-        backTextView.addSubview(modelName)
-                
-        backTextView.backgroundColor = .systemGray5
-        backTextView.layer.cornerRadius = 12
+        contentView.addSubview(backContentLabelView)
+        backContentLabelView.addSubview(modelName)
         
-        modelName.font = .systemFont(ofSize: 10, weight: .bold)
-        modelName.textAlignment = .center
+        let tapGeusteRecognizer = UITapGestureRecognizer(target: self,
+                                                         action: #selector(tapToFavs(tapGestureRecognizer:)))
+        favImageContainerView.isUserInteractionEnabled = true
+        favImageContainerView.addGestureRecognizer(tapGeusteRecognizer)
         
         configureContraints()
     }
@@ -68,17 +81,17 @@ class ModelViewCell: UICollectionViewCell {
     }
     
     func configureCell(image: UIImage,
-                       nameText: String) {
-        let isItemFav = true
+                       nameText: String,
+                       isItemFav: Bool) {
         modelImage.image = image
         modelName.text = nameText
         favImageView.tintColor = isItemFav ? .systemRed : .white
     }
-    
+}
+
+// MARK: - private method
+extension ModelViewCell {
     private func configureContraints() {
-        modelName.translatesAutoresizingMaskIntoConstraints = false
-        backTextView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             modelImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             modelImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
@@ -95,15 +108,20 @@ class ModelViewCell: UICollectionViewCell {
             favImageView.widthAnchor.constraint(equalTo: favImageContainerView.widthAnchor, multiplier: 0.75),
             favImageView.heightAnchor.constraint(equalTo: favImageView.widthAnchor),
 
-            backTextView.topAnchor.constraint(equalTo: modelImage.bottomAnchor, constant: 8),
-            backTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            backTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            backTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            backContentLabelView.topAnchor.constraint(equalTo: modelImage.bottomAnchor, constant: 8),
+            backContentLabelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            backContentLabelView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            backContentLabelView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            modelName.topAnchor.constraint(equalTo: backTextView.topAnchor, constant: 5),
-            modelName.leadingAnchor.constraint(equalTo: backTextView.leadingAnchor, constant: 10),
-            modelName.trailingAnchor.constraint(equalTo: backTextView.trailingAnchor, constant: -10),
-            modelName.bottomAnchor.constraint(equalTo: backTextView.bottomAnchor, constant: -5)
+            modelName.topAnchor.constraint(equalTo: backContentLabelView.topAnchor, constant: 5),
+            modelName.leadingAnchor.constraint(equalTo: backContentLabelView.leadingAnchor, constant: 10),
+            modelName.trailingAnchor.constraint(equalTo: backContentLabelView.trailingAnchor, constant: -10),
+            modelName.bottomAnchor.constraint(equalTo: backContentLabelView.bottomAnchor, constant: -5)
         ])
+    }
+    
+    @objc
+    private func tapToFavs(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("tap like")
     }
 }

@@ -15,4 +15,5 @@ struct Model: Codable {
     let spec: String
     let image: String
     let manufacturer: String
+    let isInFavs: Bool = true
 }

@@ -44,8 +44,8 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //let cell = ModelViewCell()
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ModelViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                            for: indexPath) as? ModelViewCell else {
             fatalError("can't reuse ModelViewCell")
         }
         let service = ServerService.shared
@@ -58,8 +58,21 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
                                    isItemFav: model.isInFavs)
             }
         }
+//        let tapOnCell = UITapGestureRecognizer(target: self, action: #selector(openDetail(_:)))
+//        tapOnCell.delegate = self
+//        cell.isUserInteractionEnabled = true
+//        cell.addGestureRecognizer(tapOnCell)
+        
         return cell
     }
+    
+//    @objc private func openDetail(_ tapGestureRecognizer: UITapGestureRecognizer) {
+//        print("tap on cell")
+//        let point = tapGestureRecognizer.location(in: collectionView)
+//        if let indexPath = collectionView?.indexPathForItem(at: point) {
+//            print(#function, indexPath)
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter?.models[indexPath.row] {
@@ -110,6 +123,7 @@ extension CollectionViewController: CollectionViewInputProtocol {
     }
 }
 
+// MARK: - private method
 extension CollectionViewController {
     private func configureCollectionView() {
         collectionView.register(ModelViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -128,3 +142,17 @@ extension CollectionViewController {
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
+/*
+extension CollectionViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let point = touch.location(in: collectionView)
+        if let indexPath = collectionView?.indexPathForItem(at: point),
+            let cell = collectionView?.cellForItem(at: indexPath) {
+            print(#function, indexPath)
+            return touch.location(in: cell).y > 50
+        }
+        
+        return false
+    }
+}*/
