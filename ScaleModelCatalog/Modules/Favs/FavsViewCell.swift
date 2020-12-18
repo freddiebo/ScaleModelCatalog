@@ -12,9 +12,9 @@ private let defaultMargin: CGFloat = 10
 
 class FavsViewCell: UICollectionViewCell {
     
-    static let height: CGFloat = 150
+    static let height: CGFloat = 80
         
-    private let labelWidth = UIScreen.main.bounds.width - 4 * defaultMargin - FavsViewCell.height / 2 - FavsViewCell.height
+    private let labelWidth = UIScreen.main.bounds.width - 2 * defaultMargin - FavsViewCell.height / 2 - FavsViewCell.height
     
     private var nameString: String = "" {
         didSet {
@@ -79,20 +79,20 @@ class FavsViewCell: UICollectionViewCell {
         let cellWidth = UIScreen.main.bounds.width
         let cellHeight = FavsViewCell.height
         
-        let imageHeight = cellHeight - 2 * defaultMargin
-        let imageFrame = CGRect(x: defaultMargin,
-                                y: defaultMargin,
+        let imageHeight = cellHeight - defaultMargin
+        let imageFrame = CGRect(x: defaultMargin / 2,
+                                y: defaultMargin / 2,
                                 width: imageHeight,
                                 height: imageHeight)
         imageView.frame = imageFrame
         
-        let labelFrame = CGRect(x: imageView.frame.maxX + defaultMargin,
+        let labelFrame = CGRect(x: imageView.frame.maxX + defaultMargin / 2,
                                 y: cellHeight / 2 - labelHeight / 2,
                                 width: labelWidth,
                                 height: labelHeight)
         nameLabel.frame = labelFrame
         
-        let favsContainerFrame = CGRect(x: cellWidth - defaultMargin - cellHeight / 2,
+        let favsContainerFrame = CGRect(x: cellWidth - defaultMargin / 2 - cellHeight / 2,
                                         y: cellHeight / 2 - cellHeight / 2 / 2,
                                         width: cellHeight / 2,
                                         height: cellHeight / 2)

@@ -40,7 +40,6 @@ extension CollectionPresenter: CollectionModuleInputProtocol {
 // MARK: - CollectionInteractorOutputProtocol
 extension CollectionPresenter: CollectionInteractorOutputProtocol {
     func didRetrieveModels(_ models: [Model]) {
-        #warning("тут где-то косячок 🚬")
         self.models.append(contentsOf: models)
         view?.reloadInterface()
     }

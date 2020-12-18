@@ -10,6 +10,7 @@ import UIKit
 
 class ModelViewCell: UICollectionViewCell {
 
+    private var modelId: String?
     private let modelImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +58,7 @@ class ModelViewCell: UICollectionViewCell {
         super.prepareForReuse()
         modelName.text = nil
         modelImage.image = nil
+        modelId = nil
     }
     
     override init(frame: CGRect) {
@@ -85,7 +87,9 @@ class ModelViewCell: UICollectionViewCell {
     
     func configureCell(image: UIImage,
                        nameText: String,
-                       isItemFav: Bool) {
+                       modelId: String) {
+        let isItemFav = true
+        self.modelId = modelId
         modelImage.image = image
         modelName.text = nameText
         favImageView.tintColor = isItemFav ? .systemRed : .white

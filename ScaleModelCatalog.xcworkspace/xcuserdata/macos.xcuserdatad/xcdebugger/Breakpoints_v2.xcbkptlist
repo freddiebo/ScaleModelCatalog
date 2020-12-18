@@ -14,9 +14,9 @@
             filePath = "ScaleModelCatalog/Modules/Collection/ModelCell/ModelViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "configureCell(image:nameText:isItemFav:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "configureCell(image:nameText:modelId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,8 +30,8 @@
             filePath = "ScaleModelCatalog/Modules/Favs/View/FavsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>

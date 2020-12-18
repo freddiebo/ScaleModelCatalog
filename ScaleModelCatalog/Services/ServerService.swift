@@ -23,12 +23,6 @@ class ServerService {
     
     private init() {}
     
-    // вынести в Presenter. В Interactor'е просто получаем новую
-    // порцию моделек, он говорит Presenter'у: вот новые модели
-    // а презентер уже сам решает что с ними делать. (в данной ситуации добавляет
-    // к остальным моделькам)
-    private var pagesModel = [Model]()
-    private var pagesSortModel = [Model]()
     private let cache = NSCache<NSString,UIImage>()
     private let provider = MoyaProvider<Network>()
 }
@@ -58,9 +52,9 @@ extension ServerService: ServerServiceProtocol {
             switch result {
             case .success(let response):
                 do {
-                    self.pagesModel.append(contentsOf: try response.map([Model].self))
+                    let pageOfModels = try response.map([Model].self)
                     DispatchQueue.main.async {
-                        completion(self.pagesModel)
+                        completion(pageOfModels)
                     }
                 }
                 catch {
