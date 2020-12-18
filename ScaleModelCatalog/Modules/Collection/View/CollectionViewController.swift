@@ -63,6 +63,11 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter?.models[indexPath.row] {
+            
+            let favsDef = FavoriteService.shared
+            favsDef.saveInFavs(model: model)
+            let mod = favsDef.getFavsModel(for: model.id)
+            
             presenter?.detailViewShow(model: model, from: self)
         }
     }
