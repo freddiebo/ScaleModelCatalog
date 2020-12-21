@@ -48,6 +48,9 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
                                                             for: indexPath) as? ModelViewCell else {
             fatalError("can't reuse ModelViewCell")
         }
+        
+        cell.delegate = self
+        
         let service = ServerService.shared
         if let model = presenter?.models[indexPath.row] {
             service.getImageModel(with: model.id,
@@ -55,7 +58,8 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
                                     guard let image = image else { return }
                 cell.configureCell(image: image,
                                    nameText: model.name,
-                                   modelId: model.id)
+                                   modelId: model.id,
+                                   modelIsInFavs: model.isInFavs)
             }
         }
         return cell
@@ -63,10 +67,6 @@ extension CollectionViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter?.models[indexPath.row] {
-            
-            let favsDef = FavoriteService.shared
-            favsDef.saveInFavs(model: model)
-            let mod = favsDef.getFavsModel(for: model.id)
             
             presenter?.detailViewShow(model: model, from: self)
         }
@@ -112,6 +112,13 @@ extension CollectionViewController: CollectionViewInputProtocol {
     func reloadInterface() {
         collectionView.reloadData()
         spinner.stopAnimating()
+    }
+}
+
+// MARK: - ModelViewCellDelegat
+extension CollectionViewController: ModelViewCellDelegate {
+    func didTapOnFavButton(with id: String) {
+        presenter?.updateModelInFavs(with: id)
     }
 }
 

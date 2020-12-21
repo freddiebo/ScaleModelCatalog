@@ -39,7 +39,7 @@ extension ServerService: ServerServiceProtocol {
                     }
                 }
                 catch {
-                    print("this error")
+                    print("this error \(error)")
                 }
             case .failure(let error):
                 print(error.errorDescription ?? "Unknown error")
@@ -58,7 +58,7 @@ extension ServerService: ServerServiceProtocol {
                     }
                 }
                 catch {
-                    print("this error")
+                    print("this error \(error)")
                 }
             case .failure(let error):
                 print(error.errorDescription ?? "Unknown error")

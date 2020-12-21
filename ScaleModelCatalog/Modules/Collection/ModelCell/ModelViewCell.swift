@@ -10,7 +10,15 @@ import UIKit
 
 class ModelViewCell: UICollectionViewCell {
 
+    weak var delegate: ModelViewCellDelegate?
+    
     private var modelId: String?
+    private var modelIsInFavs: Bool = false {
+        didSet {
+            favImageView.tintColor = modelIsInFavs ? .systemRed : .white
+            favImageView.reloadInputViews()
+        }
+    }
     private let modelImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +82,7 @@ class ModelViewCell: UICollectionViewCell {
         favImageContainerView.isUserInteractionEnabled = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                          action: #selector(tapToFavs))
+                                                          action: #selector(tapToFavsButton))
         favImageContainerView.isUserInteractionEnabled = true
         favImageContainerView.addGestureRecognizer(tapGestureRecognizer)
         
@@ -87,12 +95,15 @@ class ModelViewCell: UICollectionViewCell {
     
     func configureCell(image: UIImage,
                        nameText: String,
-                       modelId: String) {
-        let isItemFav = true
+                       modelId: String,
+                       modelIsInFavs: Bool?) {
+        if let isItemFav = modelIsInFavs {
+            self.modelIsInFavs = isItemFav
+            favImageView.tintColor = isItemFav ? .systemRed : .white
+        }
         self.modelId = modelId
         modelImage.image = image
         modelName.text = nameText
-        favImageView.tintColor = isItemFav ? .systemRed : .white
     }
 }
 
@@ -128,7 +139,10 @@ extension ModelViewCell {
     }
     
     @objc
-    private func tapToFavs() {
-        print("tap like")
+    private func tapToFavsButton() {
+        if let id = modelId {
+            modelIsInFavs = modelIsInFavs ? false : true
+            delegate?.didTapOnFavButton(with: id)
+        }
     }
 }

@@ -45,6 +45,7 @@
 		22858087245707C50075EC08 /* TableViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22858086245707C50075EC08 /* TableViewOutputProtocol.swift */; };
 		2285808924570A2A0075EC08 /* TableRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285808824570A2A0075EC08 /* TableRouterInputProtocol.swift */; };
 		2285808B24570A340075EC08 /* TableRouterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285808A24570A340075EC08 /* TableRouterOutputProtocol.swift */; };
+		228C5F11258CF635006BDAC3 /* ModelViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228C5F10258CF635006BDAC3 /* ModelViewCellDelegate.swift */; };
 		2293CA462449B4F90072F59E /* CollectionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA452449B4F90072F59E /* CollectionAssembly.swift */; };
 		2293CA492449B6C80072F59E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA482449B6C80072F59E /* BaseViewController.swift */; };
 		2293CA4B2449B6D30072F59E /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293CA4A2449B6D30072F59E /* BaseAssembly.swift */; };
@@ -167,6 +168,7 @@
 		22858086245707C50075EC08 /* TableViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOutputProtocol.swift; sourceTree = "<group>"; };
 		2285808824570A2A0075EC08 /* TableRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouterInputProtocol.swift; sourceTree = "<group>"; };
 		2285808A24570A340075EC08 /* TableRouterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRouterOutputProtocol.swift; sourceTree = "<group>"; };
+		228C5F10258CF635006BDAC3 /* ModelViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewCellDelegate.swift; sourceTree = "<group>"; };
 		2293CA452449B4F90072F59E /* CollectionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAssembly.swift; sourceTree = "<group>"; };
 		2293CA482449B6C80072F59E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2293CA4A2449B6D30072F59E /* BaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssembly.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				22B83D862435E4780001FFB5 /* ModelViewCell.swift */,
+				228C5F10258CF635006BDAC3 /* ModelViewCellDelegate.swift */,
 				22B83D872435E4780001FFB5 /* ModelViewCell.xib */,
 			);
 			path = ModelCell;
@@ -998,6 +1001,7 @@
 				40679F0B258A247A00F44343 /* FavsRouterOutputProtocol.swift in Sources */,
 				22858083245707210075EC08 /* TableModuleOutputProtocol.swift in Sources */,
 				228580722456F2280075EC08 /* ImageViewOutputProtocol.swift in Sources */,
+				228C5F11258CF635006BDAC3 /* ModelViewCellDelegate.swift in Sources */,
 				22F09B2D244D88AF00440E6A /* DetailModuleInputProtocol.swift in Sources */,
 				22E36D6124FFD6B600733317 /* SignUpViewInputProtocol.swift in Sources */,
 				22F09B2F244D88DE00440E6A /* DetailModuleOutputProtocol.swift in Sources */,

@@ -11,4 +11,5 @@ import UIKit
 protocol CollectionInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
     func didRetrieveModels(_ models: [Model])
+    func didRetrieveFavsModels(_ models: [Model])
 }

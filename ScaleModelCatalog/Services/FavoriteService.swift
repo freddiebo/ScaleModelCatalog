@@ -38,6 +38,8 @@ class FavoriteService {
     }*/
     
     // Массив избранных моделей
+    
+    // !!обернуть в escaping completion и на другой поток!!
     func saveInFavsArray(of models: [Model]) {
         let keyValue = "FavsModel"
         do {
