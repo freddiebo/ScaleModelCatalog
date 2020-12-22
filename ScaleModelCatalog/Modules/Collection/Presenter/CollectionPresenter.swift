@@ -60,7 +60,6 @@ extension CollectionPresenter: CollectionInteractorOutputProtocol {
         self.models.append(contentsOf: models)
         syncModelsWithFavs()
         view?.reloadInterface()
-        print(self.models)
     }
 }
 

@@ -10,4 +10,5 @@ import Foundation
 
 protocol FavsViewControllerInputProtocol: class {
     func setupView()
+    func reloadInterface()
 }

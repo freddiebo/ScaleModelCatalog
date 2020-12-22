@@ -57,7 +57,7 @@ class FavsViewCell: UICollectionViewCell {
     
     private let heartImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "heart.fill"))
-        imageView.tintColor = .white
+        imageView.tintColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -105,8 +105,14 @@ class FavsViewCell: UICollectionViewCell {
         heartImageView.frame = heartImageViewFrame
     }
     
-    func config() {
-        nameString = "Ffdsjksdf"
+    func config(modelId: String ,modelName: String, modelImageName: String, isInFavs: Bool?) {
+        nameString = modelName
+        let service = ServerService.shared
+        service.getImageModel(with: modelId,
+                              from: modelImageName) { image in
+                                guard let image = image else { return }
+            self.imageView.image = image
+        }
         layoutIfNeeded()
     }
 }

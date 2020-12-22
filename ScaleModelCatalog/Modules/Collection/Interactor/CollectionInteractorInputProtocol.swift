@@ -15,6 +15,5 @@ protocol CollectionInteractorInputProtocol: class {
     func retrieveModels()
     func retrievePagesModels(with page: Int, where count: Int)
     func updateFavs(with model:Model)
-    func loadFavs()
     
 }

@@ -10,9 +10,16 @@ import Foundation
 
 class FavsInteractor: BaseInteractor {
     var presenter: FavsInteractorOutputProtocol?
+    private let favoriveService = FavoriteService.shared
 }
 
 // MARK: - FavsInteractorInputProtocol
 extension FavsInteractor: FavsInteractorInputProtocol {
-    
+    func retrieveFavsModels() {
+        var favsModels = [Model]()
+        if let loadsModels = favoriveService.getFavsModels() {
+            favsModels = loadsModels
+        }
+        presenter?.didRetrieveFavsModels(favsModels)
+    }
 }

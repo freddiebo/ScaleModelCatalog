@@ -99,7 +99,7 @@ class ModelViewCell: UICollectionViewCell {
                        modelIsInFavs: Bool?) {
         if let isItemFav = modelIsInFavs {
             self.modelIsInFavs = isItemFav
-            favImageView.tintColor = isItemFav ? .systemRed : .white
+            //favImageView.tintColor = isItemFav ? .systemRed : .white
         }
         self.modelId = modelId
         modelImage.image = image

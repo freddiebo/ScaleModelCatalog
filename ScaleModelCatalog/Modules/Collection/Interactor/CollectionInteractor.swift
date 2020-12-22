@@ -21,10 +21,6 @@ extension CollectionInteractor: CollectionInteractorInputProtocol {
         
     }
     
-    func loadFavs() {
-        
-    }
-    
     func updateFavs(with model: Model) {
         var currentFavs = loadFromFavs()
         if let isInFavs = model.isInFavs {
@@ -55,9 +51,5 @@ extension CollectionInteractor {
         } else {
             return []
         }
-    }
-    
-    private func syncFavs(with models: [Model]) {
-        
     }
 }

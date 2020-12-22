@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FavsInteractorInputProtocol: class {
-    
+    func retrieveFavsModels()
 }

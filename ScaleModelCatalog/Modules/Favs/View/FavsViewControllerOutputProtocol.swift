@@ -10,4 +10,6 @@ import Foundation
 
 protocol FavsViewControllerOutputProtocol: class {
     func viewDidLoad()
+    
+    var favsModels: [Model] { get }
 }

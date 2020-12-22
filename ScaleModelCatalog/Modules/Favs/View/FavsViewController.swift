@@ -34,7 +34,7 @@ class FavsViewController: UIViewController {
 // MARK: - UICollectionViewDataSource & UICollectionViewDelegate
 extension FavsViewController: UICollectionViewDataSource, UICollectionViewDelegate {    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        presenter?.favsModels.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,9 +42,9 @@ extension FavsViewController: UICollectionViewDataSource, UICollectionViewDelega
                                                             for: indexPath) as? FavsViewCell else {
             fatalError("can't reuse ModelViewCell")
         }
-        
-        cell.config()
-        
+        if let model = presenter?.favsModels[indexPath.row] {
+            cell.config(modelId: model.id, modelName: model.name, modelImageName: model.image, isInFavs: model.isInFavs)
+        }
         return cell
     }
     
@@ -68,5 +68,9 @@ extension FavsViewController: FavsViewControllerInputProtocol {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func reloadInterface() {
+        collectionView.reloadData()
     }
 }
